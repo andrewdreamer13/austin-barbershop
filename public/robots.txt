@@ -4,4 +4,4 @@ User-agent: *
 Allow: /
 
 # Host & Sitemap (Replace with your client's real domain)
-Sitemap: https://your-client-domain.com/sitemap.xml
+Sitemap: https://andrewdreamer13.github.io/austin-barbershop/sitemap.xml

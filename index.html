@@ -1,23 +1,15 @@
 
-<!--
-  Main entry HTML template for the homepage, assembling modular layout partials via Vite HTML inject and establishing data-attribute containers for lazy-loaded media.
-
-  1. `<load>` components - Injects modular HTML partials including head metadata, headers, footers, page sections, interactive UI elements, and modal dialogs.
-  2. `data-svg-receiver` containers - Serves as placeholders for lazy-loading inline SVG graphics via template clones or external fetches.
-  3. `data-map-receiver` containers - Defines mount points for deferred loading of iframe Google Maps or custom interactive maps.
-  4. `data-video-receiver` containers - Sets up deferred loading targets for local WebM videos or embedded YouTube players.
--->
 
 <!doctype html>
 <html lang="en">
   <load
     src="/src/html/components/head.html"
-    title="[Page Title: 60-70 characters max. Brand name + primary keyword]"
-    description="[Page Description: 150-160 characters max. Engaging snippet for Google search results]"
-    keywords="[Comma-separated keywords. E.g.: hvac design, ventilation installation, custom kitchen]"
-    site-url="https://[your-client-domain.com]/"
-    og-image="img/og-preview.jpg"
-    theme-color="[HEX color code for mobile browsers address bar. E.g.: #0f172a]"
+    title="Austin Barbershop — Vintage Style & Haircuts for Texas Trendsetters"
+    description="Responsive landing page for the vintage Austin Barbershop for Texas trendsetters. Premium haircuts, classic shaves, and beard grooming."
+    keywords="austin barbershop, texas trendsetters, vintage barbershop, mens haircuts austin, beard trim, classic shave"
+    site-url="https://andrewdreamer13.github.io/austin-barbershop/"
+    og-image="assets/img/og-preview.webp"
+    theme-color="#121212"
   />
   <body>
     <!-- the way to use vite-plugin-html-inject -->
