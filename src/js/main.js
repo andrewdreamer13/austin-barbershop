@@ -1,10 +1,4 @@
 
-/**
- * Main application entry point that imports global styles and modules, initializing all core UI components, animations, form handlers, and media loaders upon DOM ready.
- * 
- * 1. `DOMContentLoaded` listener - Bootstraps application interactive components, custom selects, theme switching, sliders, maps, and video loaders once the DOM is ready.
- * 2. Async SVG Template Loader (IIFE) - Dynamically imports local SVG template assets asynchronously and triggers the lazy SVG rendering engine with error fallback handling.
- */
 
 import "../scss/main.scss";
 import "virtual:svg-icons-register";
@@ -56,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initResizableSwiper();
   initMaps();
   initVideoLoader();
-   splitTextIntoSpans(".title");
+  //  splitTextIntoSpans(".title");
   // initUpButton(".footer__up-button");
 
 

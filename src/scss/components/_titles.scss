@@ -1,8 +1,30 @@
 @use "../tools" as t;
 
 .title {
-  text-align: center;
-   @include t.fluid-prop("font-size",32, 100);
-   @include t.fluid-prop("margin-bottom",20, 60);
-   color: var(--theme-text);
+  position: relative;
+  width: max-content;
+  margin: 0 auto;
+  padding-bottom: 20px;
+  @include t.flex-mix(center, center, column, 0);
+
+  &::after {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 100px;
+    height: 5px;
+    transform: translateX(-50%);
+    border-radius: 2px;
+    background-color: t.$colorAccent;
+    content: "";
+  }
+  &__text {
+    display: block;
+    color: t.$colorWhite;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 1;
+    font-family: t.$font;
+    text-align: center;
+  }
 }

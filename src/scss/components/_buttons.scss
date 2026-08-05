@@ -1,2 +1,22 @@
 @use "../tools" as t;
 
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 250px;
+  padding: 16px 30px;
+  border-radius: 6px;
+  background-color: #ccc;
+
+  span {
+    display: inline-block;
+
+    color: t.$colorWhite;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1;
+    font-family: t.$font;
+    text-align: center;
+  }
+}
