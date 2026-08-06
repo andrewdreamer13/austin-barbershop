@@ -1,0 +1,57 @@
+@use "../tools" as t;
+
+.hero {
+  width: 100%;
+  padding: 252px 0 102px 0;
+  @include t.fluid-prop("padding-top", 132, 252, 320, 950);
+  @include t.fluid-prop("padding-bottom", 72, 102, 320, 950);
+  background-image: url('/src/assets/img/webp/overlay-1.webp'), url("/src/assets/img/webp/bg-1.webp");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: t.$colorBg;
+
+
+  &__inner {
+    width: 100%;
+    @include t.flex-mix(center, center, column);
+  }
+
+  &__title {
+    margin-bottom: 30px;
+    @include t.fluid-prop("margin-bottom", 15, 30, 320, 950);
+  }
+
+  &__subtitle {
+    margin-bottom: 50px;
+  }
+
+  &__subtitle-text {
+    display: block;
+    color: t.$colorWhite;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 1;
+    font-family: t.$font;
+    text-align: center;
+    @include t.fluid-prop("font-size", 22, 36, 320, 950);
+  }
+
+  &__buttons {
+    width: 100%;
+    @include t.flex-mix(center, center, row, 20px);
+
+    @media (max-width: 576px) {
+      @include t.flex-mix(center, center, column, 20px);
+    }
+  }
+
+  &__direction-button {
+    background-color: t.$colorSuccess;
+  }
+
+  &__book-button {
+    background-color: t.$colorAccent;
+  }
+}
+

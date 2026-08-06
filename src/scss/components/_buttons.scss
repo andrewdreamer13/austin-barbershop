@@ -6,17 +6,26 @@
   justify-content: center;
   min-width: 250px;
   padding: 16px 30px;
+    @include t.fluid-prop("padding-top", 10, 16, 320, 950);
+    @include t.fluid-prop("padding-bottom", 10, 16, 320, 950);
+
   border-radius: 6px;
-  background-color: #ccc;
+  transition: filter 0.3s ease;
+
+  @media (hover:hover) {
+    &:hover {
+      filter: brightness(1.2);
+    }
+  }
 
   span {
     display: inline-block;
-
     color: t.$colorWhite;
     font-weight: 600;
-    font-size: 18px;
     line-height: 1;
     font-family: t.$font;
     text-align: center;
+    @include t.fluid-prop("font-size", 16, 18, 320, 950);
+
   }
 }

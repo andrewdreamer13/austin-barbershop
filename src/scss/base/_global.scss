@@ -3,7 +3,9 @@
 :root {
  
   }
-
+html {
+  overflow-x: hidden;
+}
 
 body {
   background-color: t.$colorBg;
@@ -11,6 +13,7 @@ body {
   font-weight: 400;
   font-size: 18px;
   font-family:t.$font;
+  overflow-x: hidden;
 }
 
 
