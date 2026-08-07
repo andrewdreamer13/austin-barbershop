@@ -1,0 +1,146 @@
+@use "../tools" as t;
+
+.prices {
+  width: 100%;
+  overflow: hidden;
+  @include t.fluid-prop("padding-top", 70, 150, 320, 950);
+  @include t.fluid-prop("padding-bottom", 50, 100, 320, 950);
+  background-image:
+    radial-gradient(
+      ellipse 70% 85% at 60% 55%,
+      rgba(31, 31, 33, 0.5) 0%,
+      rgba(31, 31, 33, 0.3) 25%,
+      rgba(31, 31, 33, 0.8) 40%,
+      rgba(31, 31, 33, 1) 50%,
+      #1f1f21 75%
+    ),
+    url("/src/assets/img/webp/bg-3.webp");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: t.$colorBg;
+
+  @media (min-width: 1920px) {
+    @include t.fluid-prop("padding-top", 150, 200, 1920, 2700);
+    @include t.fluid-prop("padding-bottom", 100, 200, 1920, 2700);
+  }
+
+  &__title {
+    margin-bottom: 40px;
+  }
+
+  &__description {
+    margin-bottom: 60px;
+    color: t.$colorWhite;
+    font-weight: 400;
+    @include t.fluid-prop("font-size", 18, 24, 320, 768);
+    line-height: 1.4;
+    font-family: t.$font;
+    text-align: center;
+  }
+
+  &__list {
+    width: 100%;
+    @include t.flex-mix(center, center, column, 20px);
+    margin-bottom: 70px;
+  }
+
+  &__list-item {
+    width: 100%;
+    @include t.flex-mix(space-between, flex-start, row, 30px);
+    padding-bottom: 20px;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid rgba(t.$colorWhite, 0.3);
+    }
+  }
+
+
+  &__list-title {
+    margin-bottom: 10px;
+    color: t.$colorAccent;
+    font-weight: 600;
+    font-size: 22px;
+    font-family: t.$font;
+  }
+
+  &__list-description {
+    color: t.$colorWhite;
+    font-weight: 400;
+    font-size: 18px;
+    font-family: t.$font;
+  }
+
+  &__list-price {
+    padding: 4px 8px;
+    border-radius: 4px;
+    background-color: t.$colorAccent;
+    @include t.flex-mix(center, center);
+    color: t.$colorWhite;
+    font-weight: 400;
+    font-size: 18px;
+    font-family: t.$font;
+    line-height: 1;
+  }
+
+  &__buttons {
+    width: 100%;
+    @include t.flex-mix(center, center, row, 20px);
+
+    @media (max-width: 576px) {
+      @include t.flex-mix(center, center, column, 20px);
+    }
+  }
+
+  &__direction-button {
+    background-color: t.$colorSuccess;
+    transition: transform 0.3s ease;
+
+    &::before {
+      z-index: -1;
+      position: absolute;
+      inset: 0;
+      transform: scaleX(0);
+      transform-origin: center;
+      border-radius: 6px;
+      background-color: t.$colorAccent;
+      content: "";
+      transition: transform 0.3s ease;
+    }
+    @media (hover: hover) {
+      &:hover::before {
+        transform: scaleX(1);
+      }
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
+  }
+
+  &__book-button {
+    background-color: t.$colorAccent;
+    transition: transform 0.3s ease;
+
+    &::before {
+      z-index: -1;
+      position: absolute;
+      inset: 0;
+      transform: scaleX(0);
+      transform-origin: center;
+      border-radius: 6px;
+      background-color: t.$colorSuccess;
+      content: "";
+      transition: transform 0.3s ease;
+    }
+    @media (hover: hover) {
+      &:hover::before {
+        transform: scaleX(1);
+      }
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
+  }
+}
