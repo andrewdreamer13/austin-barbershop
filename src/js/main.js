@@ -1,5 +1,3 @@
-
-
 import "../scss/main.scss";
 import "virtual:svg-icons-register";
 
@@ -18,7 +16,7 @@ import { initBurger } from "./components/burger.js";
 import { initAppearance } from "./animations/appearance.js";
 import { initChangeTheme } from "./services/changeTheme.js";
 import { initModal } from "./components/modalManager.js";
- import { initLazySvg } from "./services/lazySvgLoader.js";
+import { initLazySvg } from "./services/lazySvgLoader.js";
 import { initAccordion } from "./components/accordion.js";
 import { initFocusManager } from "./services/focusManager.js";
 // import {initUpButton} from "./components/upButton/js";
@@ -28,14 +26,14 @@ import { initCookieBanner } from "./components/cookieBanner.js";
 import { initCustomSelect } from "./components/customSelect.js";
 import { initFormHandler } from "./forms/formHandler.js";
 import { initResizableSwiper } from "./services/matchMediaSlider.js";
-import {initMaps} from "./services/lazyMapLoader.js";
+import { initMaps } from "./services/lazyMapLoader.js";
 import { initVideoLoader } from "./services/lazyVideoLoader.js";
 import { splitTextIntoSpans } from "./services/splitText.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   console.log("The project works");
   initPreloader();
-  initBurger("#burger", ".nav", ".nav__list");
+  initBurger("#burger", ".header__info");
   initSliders();
   initChangeTheme("#theme");
   initModal();
@@ -53,17 +51,16 @@ document.addEventListener("DOMContentLoaded", () => {
   //  splitTextIntoSpans(".title");
   // initUpButton(".footer__up-button");
 
-
-(async () => {
-  try {
-    await import("./services/svgTemplates.js");
-    initLazySvg();
-  } catch (error) {
-    console.error("SVG template lazy-loading error:", error);
-    initLazySvg();
-  }
-})();
-
-
-
+  (async () => {
+    try {
+      await import("./services/svgTemplates.js");
+      initLazySvg();
+    } catch (error) {
+      console.error("SVG template lazy-loading error:", error);
+      initLazySvg();
+    }
+  })();
 });
+
+console.log(document.querySelectorAll('.animated'));
+

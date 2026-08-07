@@ -5,12 +5,13 @@
   padding: 252px 0 102px 0;
   @include t.fluid-prop("padding-top", 132, 252, 320, 950);
   @include t.fluid-prop("padding-bottom", 72, 102, 320, 950);
-  background-image: url('/src/assets/img/webp/overlay-1.webp'), url("/src/assets/img/webp/bg-1.webp");
+  background-image:
+    url("/src/assets/img/webp/overlay-1.webp"),
+    url("/src/assets/img/webp/bg-1.webp");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
   background-color: t.$colorBg;
-
 
   &__inner {
     width: 100%;
@@ -48,10 +49,53 @@
 
   &__direction-button {
     background-color: t.$colorSuccess;
+    transition: transform 0.3s ease;
+
+    &::before {
+      z-index: -1;
+      position: absolute;
+      inset: 0;
+      transform: scaleX(0);
+      transform-origin: center;
+      border-radius: 6px;
+      background-color: t.$colorAccent;
+      content: "";
+      transition: transform 0.3s ease;
+    }
+    @media (hover: hover) {
+      &:hover::before {
+        transform: scaleX(1);
+      }
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
   }
 
   &__book-button {
     background-color: t.$colorAccent;
+    transition: transform 0.3s ease;
+
+    &::before {
+      z-index: -1;
+      position: absolute;
+      inset: 0;
+      transform: scaleX(0);
+      transform-origin: center;
+      border-radius: 6px;
+      background-color: t.$colorSuccess;
+      content: "";
+      transition: transform 0.3s ease;
+    }
+    @media (hover: hover) {
+      &:hover::before {
+        transform: scaleX(1);
+      }
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
   }
 }
-

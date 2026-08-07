@@ -1,23 +1,71 @@
 <header class="header">
-  <div class="header__inner"> <a class="logo" href="/">
-      Logo
-    </a>
-    
-    <nav class="nav">
-      <ul class="nav__list">
-        <li class="nav__item"><a class="nav__link" href="404.html">page 404</a></li>
-        <li class="nav__item"><a class="nav__link" href="#!">nav link</a></li>
-        <li class="nav__item"><a class="nav__link" href="#!">nav link</a></li>
-      </ul>
-    </nav>
+  <div class="container">
+    <div class="header__inner">
+      <div class="header__info">
+        <div class="header__contacts">
+          <address class="header__address">3862 Ashton Lane, Austin TX</address>
+          <span
+            class="header__divider"
+            aria-hidden="true"
+            >|</span
+          >
+          <a
+            class="header__phone animated"
+            href="tel:+15124969838"
+            data-text=" +1&nbsp;512-496-9838"
+          >
+            +1 512-496-9838
+          </a>
+        </div>
 
-    <a href="tel:+12345678" class="header__phone">
-      <svg class="icon-phone" width="20" height="20">
-        <use href="#icons-phone"></use>
-      </svg>
-    </a>
-    <button class="btn-primary" id="theme" aria-label="change theme">change theme</button>
+        <ul class="header__socials">
+          <li class="header__social-item animated">
+            <a
+              class="header__social-link"
+              href="https://www.facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-text="Facebook"
+            >
+              Facebook
+            </a>
+          </li>
+          <li class="header__social-item animated">
+            <span
+              class="header__divider"
+              aria-hidden="true"
+              >|</span
+            >
+            <a
+              class="header__social-link"
+              href="https://www.instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-text="Instagram"
+            >
+              Instagram
+            </a>
+          </li>
+          <li class="header__social-item animated">
+            <span
+              class="header__divider"
+              aria-hidden="true"
+              >|</span
+            >
+            <a
+              class="header__social-link"
+              href="https://www.youtube.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-text="Youtube"
+            >
+              Youtube
+            </a>
+          </li>
+        </ul>
+      </div>
 
-    <load src="/src/html/components/burger.html" />
+      <load src="/src/html/components/burger.html" />
+    </div>
   </div>
 </header>
