@@ -1,0 +1,18 @@
+@use "../tools" as t;
+
+.icon-box {
+  width: 120px;
+  height: 120px;
+  background-image: url("/src/assets/icons/hexagon.svg");
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+ @include t.flex-mix(center, center);
+
+  
+  &__svg {
+    width: 54px;
+    height: 54px;
+    fill: t.$colorWhite;
+  }
+}

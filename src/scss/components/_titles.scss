@@ -35,7 +35,6 @@
       @media (max-width: 576px) {
         transform: translateY(2px);
       }
-     
     }
     &::after {
       position: absolute;
@@ -58,6 +57,7 @@
   width: max-content;
   margin: 0 auto;
   padding-bottom: 20px;
+  @include t.fluid-prop("padding-bottom", 12, 20, 320, 950);
   @include t.flex-mix(center, center, column, 0);
 
   &::after {
@@ -66,6 +66,7 @@
     left: 50%;
     width: 100px;
     height: 5px;
+    @include t.fluid-prop("height", 3, 5, 320, 950);
     transform: translateX(-50%);
     border-radius: 2px;
     background-color: t.$colorAccent;
@@ -75,7 +76,8 @@
     display: block;
     color: t.$colorWhite;
     font-weight: 600;
-    font-size: 36px;
+    @include t.fluid-prop("font-size", 24, 36, 320, 950);
+
     line-height: 1;
     font-family: t.$font;
     text-align: center;

@@ -2,16 +2,28 @@
 
 .hero {
   width: 100%;
-  padding: 252px 0 102px 0;
+  overflow: hidden;
   @include t.fluid-prop("padding-top", 132, 252, 320, 950);
   @include t.fluid-prop("padding-bottom", 72, 102, 320, 950);
   background-image:
-    url("/src/assets/img/webp/overlay-1.webp"),
+    radial-gradient(
+      ellipse 100% 70% at 50% 40%,
+      rgba(31, 31, 33, 0) 0%,
+      rgba(31, 31, 33, 0.1) 0%,
+      rgba(31, 31, 33, 0.8) 40%,
+      rgba(31, 31, 33, 1) 50%,
+      #1f1f21 75%
+    ),
     url("/src/assets/img/webp/bg-1.webp");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
   background-color: t.$colorBg;
+
+  @media (min-width: 1920px) {
+    @include t.fluid-prop("padding-top", 252, 352, 320, 2700);
+    @include t.fluid-prop("padding-bottom", 102, 152, 320, 2700);
+  }
 
   &__inner {
     width: 100%;

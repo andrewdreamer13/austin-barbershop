@@ -1,0 +1,69 @@
+@use "../tools" as t;
+
+.features {
+  width: 100%;
+  overflow: hidden;
+  @include t.fluid-prop("padding-top", 70, 150, 320, 950);
+  @include t.fluid-prop("padding-bottom", 50, 100, 320, 950);
+  background-image:
+    radial-gradient(
+      ellipse 95% 90% at 55% 55%,
+      rgba(31, 31, 33, 0.2) 0%,
+      rgba(31, 31, 33, 0.3) 25%,
+      rgba(31, 31, 33, 0.8) 40%,
+      rgba(31, 31, 33, 1) 50%,
+      #1f1f21 75%
+    ),
+    url("/src/assets/img/webp/bg-2.webp");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: t.$colorBg;
+
+  @media (min-width: 1920px) {
+    @include t.fluid-prop("padding-top", 150, 200, 1920, 2700);
+    @include t.fluid-prop("padding-bottom", 100, 200, 1920, 2700);
+  }
+
+  &__title {
+    margin-bottom: 40px;
+  }
+
+  &__description {
+    margin-bottom: 40px;
+    color: t.$colorWhite;
+    font-weight: 400;
+    @include t.fluid-prop("font-size", 18, 24, 320, 768);
+
+    line-height: 1.4;
+    font-family: t.$font;
+    text-align: center;
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(4, 160px);
+    justify-content: space-between;
+
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(2, minmax(120px, 160px));
+      justify-content: center;
+      gap: 40px;
+      @include t.fluid-prop("gap", 20, 60, 320, 768);
+    }
+  }
+
+  &__card {
+    @include t.flex-mix(center, center, column, 20px);
+  }
+
+  &__card-title-text {
+    display: block;
+    color: t.$colorWhite;
+    font-weight: 400;
+    line-height: 1.2;
+    font-family: t.$font;
+    text-align: center;
+    @include t.fluid-prop("font-size", 20, 24, 320, 768);
+  }
+}
