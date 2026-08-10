@@ -1,5 +1,3 @@
-
-
 <!doctype html>
 <html lang="en">
   <load
@@ -9,13 +7,22 @@
     keywords="austin barbershop, texas trendsetters, vintage barbershop, mens haircuts austin, beard trim, classic shave"
     site-url="https://andrewdreamer13.github.io/austin-barbershop/"
     og-image="assets/img/og-preview.webp"
-    theme-color="#121212"
+    theme-color="#1F1F21"
   />
   <body>
     <load src="/src/html/sections/header.html" />
     <load src="/src/html/sections/hero.html" />
-    <load src="/src/html/sections/features.html" />
-    <load src="/src/html/sections/prices.html" />
+    <main>
+      <load src="/src/html/sections/features.html" />
+      <load src="/src/html/sections/prices.html" />
+      <load src="/src/html/sections/gallery.html" />
+      <load src="/src/html/sections/location.html" />
+      <load src="/src/html/sections/contacts.html" />
+    </main>
+
+    <load src="/src/html/sections/footer.html" />
+    <load src="/src/html/components/modal-lightbox.html" />
+
 
     <main>
       <!-- ways to the images -->
@@ -29,8 +36,8 @@
       />
 
       <load src="/src/html/components/accordion.html" />
-      <load src="/src/html/components/main-slider.html" />
-      <load src="/src/html/components/tabs.html" />
+      <!-- <load src="/src/html/components/main-slider.html" /> -->
+
       <load
         class="form-test"
         src="/src/html/components/form.html"
@@ -38,8 +45,6 @@
       />
     </main>
     <!-- the way to use vite-plugin-html-inject -->
-    <load src="/src/html/components/modal-content1.html" />
-    <load src="/src/html/components/modal-content2.html" />
     <load src="/src/html/components/modal-success.html" />
     <load src="/src/html/components/preloader.html" />
     <load src="/src/html/components/cookie-banner.html" />

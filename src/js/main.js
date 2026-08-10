@@ -22,6 +22,7 @@ import { initFocusManager } from "./services/focusManager.js";
 // import {initUpButton} from "./components/upButton/js";
 import { initSliders } from "./components/sliders.js";
 import { initTabs } from "./components/tabs.js";
+import { initGallery } from "./services/renderGallery.js";
 import { initCookieBanner } from "./components/cookieBanner.js";
 import { initCustomSelect } from "./components/customSelect.js";
 import { initFormHandler } from "./forms/formHandler.js";
@@ -29,6 +30,7 @@ import { initResizableSwiper } from "./services/matchMediaSlider.js";
 import { initMaps } from "./services/lazyMapLoader.js";
 import { initVideoLoader } from "./services/lazyVideoLoader.js";
 import { splitTextIntoSpans } from "./services/splitText.js";
+import { initLightbox } from "./services/lightbox.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   console.log("The project works");
@@ -40,7 +42,8 @@ document.addEventListener("DOMContentLoaded", () => {
   initAppearance();
   initAccordion("#faq");
   initFocusManager();
-  initTabs("#tabs-1");
+  initTabs("#gallery-tabs");
+  initGallery();
   initCookieBanner();
   initCustomSelect("#cities", optionsData.cities);
   initCustomSelect("#countries", optionsData.countries);
@@ -48,7 +51,9 @@ document.addEventListener("DOMContentLoaded", () => {
   initResizableSwiper();
   initMaps();
   initVideoLoader();
-  //  splitTextIntoSpans(".title");
+  initLightbox();
+
+  //splitTextIntoSpans(".hero__title");
   // initUpButton(".footer__up-button");
 
   (async () => {
@@ -61,6 +66,3 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   })();
 });
-
-console.log(document.querySelectorAll('.animated'));
-

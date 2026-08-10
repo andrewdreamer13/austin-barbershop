@@ -1,0 +1,22 @@
+@use "../tools" as t;
+
+.gallery {
+  width: 100%;
+  overflow: hidden;
+  @include t.fluid-prop("padding-top", 50, 100, 320, 950);
+  @include t.fluid-prop("padding-bottom", 50, 100, 320, 950);
+
+  &__title {
+    margin-bottom: 40px;
+  }
+
+  &__description {
+    margin-bottom: 60px;
+    color: t.$colorWhite;
+    font-weight: 400;
+    @include t.fluid-prop("font-size", 18, 24, 320, 768);
+    line-height: 1.4;
+    font-family: t.$font;
+    text-align: center;
+  }
+}

@@ -95,6 +95,7 @@
   &__direction-button {
     background-color: t.$colorSuccess;
     transition: transform 0.3s ease;
+    min-width: 250px;
 
     &::before {
       z-index: -1;
@@ -121,6 +122,7 @@
   &__book-button {
     background-color: t.$colorAccent;
     transition: transform 0.3s ease;
+    min-width: 250px;
 
     &::before {
       z-index: -1;

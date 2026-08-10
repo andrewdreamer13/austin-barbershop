@@ -2,31 +2,57 @@
 
 .tabs {
   width: 100%;
-  max-width: 600px;
-  margin: 50px auto;
-  padding: 10px;
-  border: 1px solid;
 
   &__buttons {
     width: 100%;
     margin-bottom: 20px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 
-    @include t.flex-mix(center, center, row, 20px);
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  &__button-track {
+    width: max-content;
+    min-width: 100%;
+    @include t.flex-mix(center, center, row, 10px);
+
+    @media (max-width: 390px) {
+      @include t.flex-mix(flex-start, center, row, 10px);
+    }
   }
 
   &__button {
-    padding: 6px 20px;
-    border: 1px solid;
-    border-radius: 5px;
-    cursor: pointer;
-    transition:
-      background-color 0.3s,
-      color 0.3s;
+    background-color: t.$colorAccent;
+    transition: transform 0.3s ease;
+
+    &::before {
+      z-index: -1;
+      position: absolute;
+      inset: 0;
+      transform: scaleX(0);
+      transform-origin: center;
+      border-radius: 6px;
+      background-color: t.$colorSuccess;
+      content: "";
+      transition: transform 0.3s ease;
+    }
+    @media (hover: hover) {
+      &:hover::before {
+        transform: scaleX(1);
+      }
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
   }
 
   &__button--active {
-    color: #000;
-    background-color: #fff;
+    background-color: t.$colorSuccess;
   }
 
   &__content {
@@ -36,20 +62,72 @@
   }
 
   &__panel {
-  grid-area: 1 / 1;
+    visibility: hidden;
+    grid-area: 1 / 1;
+    opacity: 0;
+    pointer-events: none;
 
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
+    transition:
+      opacity 0.3s,
+      visibility 0.3s;
+  }
 
-  transition:
-    opacity .3s,
-    visibility .3s;
-}
+  &__panel--active {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+  }
 
-&__panel--active {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-}
+  &__panel-content {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(180px, 1fr));
+    margin-bottom: 30px;
+    gap: 10px;
+
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__panel-item {
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  &__panel-img {
+    transition: transform 0.5s ease;
+
+    @media (hover: hover) {
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  &__more-button {
+    margin: 0 auto;
+    background-color: t.$colorAccent;
+    transition: transform 0.3s ease;
+
+    &::before {
+      z-index: -1;
+      position: absolute;
+      inset: 0;
+      transform: scaleX(0);
+      transform-origin: center;
+      border-radius: 6px;
+      background-color: t.$colorSuccess;
+      content: "";
+      transition: transform 0.3s ease;
+    }
+    @media (hover: hover) {
+      &:hover::before {
+        transform: scaleX(1);
+      }
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
+  }
 }

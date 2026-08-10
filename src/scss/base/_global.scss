@@ -1,8 +1,13 @@
 @use "../tools" as t;
 
 :root {
- 
+}
+* {
+  &:focus-visible {
+    outline-color: t.$colorWhite;
   }
+}
+
 html {
   overflow-x: hidden;
 }
@@ -12,8 +17,14 @@ body {
   color: t.$colorWhite;
   font-weight: 400;
   font-size: 18px;
-  font-family:t.$font;
-  overflow-x: hidden;
+  font-family: t.$font;
+  text-wrap: balance;
 }
 
 
+
+html:has(body.lock),
+body.lock {
+  overflow: hidden;
+  touch-action: none;
+}

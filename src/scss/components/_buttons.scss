@@ -1,18 +1,23 @@
 @use "../tools" as t;
 
 .button {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 250px;
-  padding: 16px 30px;
+  user-select: none;
   isolation: isolate;
   @include t.fluid-prop("padding-top", 10, 16, 320, 950);
   @include t.fluid-prop("padding-bottom", 10, 16, 320, 950);
+  @include t.fluid-prop("padding-left", 20, 30, 320, 950);
+  @include t.fluid-prop("padding-right", 20, 30, 320, 950);
   position: relative;
   overflow: hidden;
   border-radius: 6px;
-  transition: filter 0.3s ease;
+
+  &[disabled] {
+    pointer-events: none;
+    opacity: 0.4;
+  }
 
   span {
     display: inline-block;

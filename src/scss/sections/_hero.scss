@@ -4,7 +4,7 @@
   width: 100%;
   overflow: hidden;
   @include t.fluid-prop("padding-top", 132, 252, 320, 950);
-  @include t.fluid-prop("padding-bottom", 72, 102, 320, 950);
+  @include t.fluid-prop("padding-bottom", 50, 100, 320, 950);
   background-image:
     radial-gradient(
       ellipse 100% 70% at 50% 40%,
@@ -60,6 +60,7 @@
   }
 
   &__direction-button {
+    min-width: 250px;
     background-color: t.$colorSuccess;
     transition: transform 0.3s ease;
 
@@ -86,6 +87,7 @@
   }
 
   &__book-button {
+    min-width: 250px;
     background-color: t.$colorAccent;
     transition: transform 0.3s ease;
 

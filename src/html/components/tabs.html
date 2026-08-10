@@ -1,75 +1,125 @@
-<div class="tabs" id="tabs-1">
+<div
+  class="tabs {=$class}"
+  id="{=$id}"
+>
   <div
     class="tabs__buttons"
     role="tablist"
   >
-    <button
-      class="tabs__button tabs__button--active"
-      type="button"
-      role="tab"
-      id="tab-1"
-      aria-selected="true"
-      aria-controls="panel-1"
-      data-tab="panel-1"
-    >
-      Tab 1
-    </button>
+    <div class="tabs__button-track">
+      <button
+        class="tabs__button tabs__button--active button"
+        type="button"
+        role="tab"
+        id="tab-beard"
+        aria-selected="true"
+        aria-controls="beard"
+        data-tab="beard"
+      >
+        <span> beards</span>
+      </button>
 
-    <button
-      class="tabs__button"
-      type="button"
-      role="tab"
-      id="tab-2"
-      aria-selected="false"
-      aria-controls="panel-2"
-      data-tab="panel-2"
-    >
-      Tab 2
-    </button>
+      <button
+        class="tabs__button button"
+        type="button"
+        role="tab"
+        id="tab-haircut"
+        aria-selected="false"
+        aria-controls="haircut"
+        data-tab="haircut"
+      >
+        <span> haircuts</span>
+      </button>
 
-    <button
-      class="tabs__button"
-      type="button"
-      role="tab"
-      id="tab-3"
-      aria-selected="false"
-      aria-controls="panel-3"
-      data-tab="panel-3"
-    >
-      Tab 3
-    </button>
+      <button
+        class="tabs__button button"
+        type="button"
+        role="tab"
+        id="tab-mustache"
+        aria-selected="false"
+        aria-controls="mustache"
+        data-tab="mustache"
+      >
+        <span> mustache</span>
+      </button>
+
+      <button
+        class="tabs__button button"
+        type="button"
+        role="tab"
+        id="tab-boys"
+        aria-selected="false"
+        aria-controls="boys"
+        data-tab="boys"
+      >
+        <span> boy's haircuts</span>
+      </button>
+    </div>
   </div>
 
   <div class="tabs__content">
     <div
       class="tabs__panel tabs__panel--active"
-      id="panel-1"
+      id="beard"
       role="tabpanel"
-      aria-labelledby="tab-1"
+      aria-labelledby="tab-beard"
       aria-hidden="false"
     >
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis earum commodi, sapiente mollitia non impedit ducimus rerum aliquam, aut eligendi consectetur magni minus cupiditate, recusandae similique corrupti rem harum. Error?
+      <div class="tabs__panel-content"></div>
+      <button
+        class="tabs__more-button button"
+        type="button"
+      >
+        <span>more photos</span>
+      </button>
     </div>
 
     <div
       class="tabs__panel"
-      id="panel-2"
+      id="haircut"
       role="tabpanel"
-      aria-labelledby="tab-2"
+      aria-labelledby="tab-haircut"
       aria-hidden="true"
     >
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. At earum minus quos possimus eaque. Rem repellat nesciunt quas repellendus accusantium. Quis, voluptatum placeat laudantium sit itaque consequuntur facilis enim totam aspernatur, corporis soluta eaque accusantium, natus culpa eum aut delectus.
+      <div class="tabs__panel-content"></div>
+      <button
+        class="tabs__more-button button"
+        type="button"
+      >
+        <span>more photos</span>
+      </button>
     </div>
 
     <div
       class="tabs__panel"
-      id="panel-3"
+      id="mustache"
       role="tabpanel"
-      aria-labelledby="tab-3"
+      aria-labelledby="tab-mustache"
       aria-hidden="true"
     >
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat atque ducimus asperiores aspernatur dicta ex quae modi dolorem placeat! Quas cum, eveniet quod numquam, ullam officia eos ex aperiam neque reiciendis laboriosam quam perspiciatis quasi in provident itaque exercitationem nemo. Laudantium nam cum commodi eum esse illo dolore fuga dolorum?
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque ex dolorum, animi minus explicabo odio inventore veritatis? Aperiam, quasi aliquid.
+      <div class="tabs__panel-content"></div>
+      <button
+        class="tabs__more-button button"
+        type="button"
+      >
+        <span>more photos</span>
+      </button>
+    </div>
+
+    <div
+      class="tabs__panel"
+      id="boys"
+      role="tabpanel"
+      aria-labelledby="tab-boys"
+      aria-hidden="true"
+    >
+      <div class="tabs__panel-content"></div>
+      <button
+        class="tabs__more-button button"
+        type="button"
+      >
+        <span>more photos</span>
+      </button>
     </div>
   </div>
 </div>
