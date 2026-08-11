@@ -1,0 +1,57 @@
+@use "../tools" as t;
+
+.map-receiver {
+  position: relative;
+  aspect-ratio: 3/2;
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  background-color: t.$colorBg;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+
+  &._is-loaded {
+    opacity: 1;
+  }
+
+  iframe,
+  .map-canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+  .mapboxgl-ctrl-group {
+    overflow: hidden;
+    border: 1px solid t.$colorAccent;
+    background-color: t.$colorBg !important;
+
+    button {
+      color: t.$colorAccent;
+
+      & + button {
+        border-top-color: t.$colorAccent !important;
+      }
+
+      &:hover {
+        background-color: t.$colorModalBg !important;
+      }
+
+      &:active,
+      &:focus {
+        background-color: t.$colorSuccess !important;
+      }
+
+      .mapboxgl-ctrl-icon {
+        filter: invert(75%) sepia(85%) saturate(1200%) hue-rotate(355deg)
+          brightness(105%);
+        transition: filter 0.2s ease;
+      }
+      &:hover .mapboxgl-ctrl-icon {
+        filter: invert(85%) sepia(100%) saturate(2500%) hue-rotate(355deg)
+          brightness(115%);
+      }
+    }
+  }
+}

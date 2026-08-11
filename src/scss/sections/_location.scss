@@ -1,20 +1,19 @@
 @use "../tools" as t;
-
-.gallery {
-  width: 100%;
+.location {
+ width: 100%;
   overflow: hidden;
   @include t.fluid-prop("padding-top", 70, 150, 320, 950);
   @include t.fluid-prop("padding-bottom", 50, 100, 320, 950);
   background-image:
     radial-gradient(
-      ellipse 85% 65% at 35% 45%,
-      rgba(31, 31, 33, 0.7) 0%,
-      rgba(31, 31, 33, 0.7) 25%,
+      ellipse 70% 65% at 60% 65%,
+      rgba(31, 31, 33, 0.5) 0%,
+      rgba(31, 31, 33, 0.5) 25%,
       rgba(31, 31, 33, 0.8) 40%,
       rgba(31, 31, 33, 1) 50%,
       #1f1f21 75%
     ),
-    url("/src/assets/img/webp/bg-2.webp");
+    url("/src/assets/img/webp/bg-5.webp");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -38,4 +37,10 @@
     font-family: t.$font;
     text-align: center;
   }
+
+    &__map-wrapper {
+      width: 100%;
+      box-shadow: 0 0 10px 5px t.$colorBg;
+    }
 }
+

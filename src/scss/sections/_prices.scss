@@ -3,13 +3,13 @@
 .prices {
   width: 100%;
   overflow: hidden;
-  @include t.fluid-prop("padding-top", 70, 150, 320, 950);
+  @include t.fluid-prop("padding-top", 50, 100, 320, 950);
   @include t.fluid-prop("padding-bottom", 50, 100, 320, 950);
   background-image:
     radial-gradient(
-      ellipse 70% 85% at 60% 55%,
+      ellipse 65% 85% at 60% 55%,
       rgba(31, 31, 33, 0.5) 0%,
-      rgba(31, 31, 33, 0.3) 25%,
+      rgba(31, 31, 33, 0.5) 25%,
       rgba(31, 31, 33, 0.8) 40%,
       rgba(31, 31, 33, 1) 50%,
       #1f1f21 75%
