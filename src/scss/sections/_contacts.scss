@@ -1,0 +1,176 @@
+@use "../tools" as t;
+
+.contacts {
+  width: 100%;
+  overflow: hidden;
+  @include t.fluid-prop("padding-top", 70, 150, 320, 950);
+  @include t.fluid-prop("padding-bottom", 50, 100, 320, 950);
+  background-image:
+    radial-gradient(
+      ellipse 85% 65% at 35% 45%,
+      rgba(31, 31, 33, 0.7) 0%,
+      rgba(31, 31, 33, 0.7) 25%,
+      rgba(31, 31, 33, 0.8) 40%,
+      rgba(31, 31, 33, 1) 50%,
+      #1f1f21 75%
+    ),
+    url("/src/assets/img/webp/bg-4.webp");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: t.$colorBg;
+
+  @media (min-width: 1920px) {
+    @include t.fluid-prop("padding-top", 150, 200, 1920, 2700);
+    @include t.fluid-prop("padding-bottom", 100, 200, 1920, 2700);
+  }
+
+  &__title {
+    margin-bottom: 40px;
+  }
+
+  &__description {
+    margin-bottom: 60px;
+    color: t.$colorWhite;
+    font-weight: 400;
+    @include t.fluid-prop("font-size", 18, 24, 320, 768);
+    line-height: 1.4;
+    font-family: t.$font;
+    text-align: center;
+  }
+
+  &__cards {
+    margin-bottom: 40px;
+    @include t.flex-mix(space-between, flex-start, row, 20px);
+
+    @media (max-width: 640px) {
+      width: 100%;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+
+  &__card {
+    @include t.flex-mix(flex-start, center, column, 0);
+    width: 100%;
+    max-width: 185px;
+
+    @media (max-width: 640px) {
+      flex-shrink: 0;
+      scroll-snap-align: start;
+    }
+  }
+
+  &__icon-box {
+    margin-bottom: 20px;
+  }
+
+  &__card-title {
+    display: block;
+    color: t.$colorWhite;
+    font-weight: 400;
+    line-height: 1.2;
+    font-family: t.$font;
+    text-align: center;
+    @include t.fluid-prop("font-size", 20, 24, 320, 768);
+    margin-bottom: 5px;
+  }
+
+  &__card-info {
+    color: t.$colorWhite;
+    font-weight: 400;
+    font-size: 18px;
+    font-family: t.$font;
+    text-align: center;
+  }
+
+
+  &__address-line {
+    display: block;
+  }
+
+  &__phone-link {
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    transition:
+      transform 0.3s ease,
+      color 0.3s ease;
+
+    &::before {
+      z-index: 1;
+      position: absolute;
+      top: 0;
+      left: 0;
+      max-width: 0;
+      height: 100%;
+      overflow: hidden;
+      content: attr(data-text);
+      color: t.$colorAccent;
+      white-space: nowrap;
+      transition: max-width 0.3s ease;
+    }
+    @media (hover: hover) {
+      &:hover::before {
+        max-width: 100%;
+      }
+
+      &:hover {
+        color: rgba(t.$colorWhite, 0);
+      }
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
+  }
+
+  &__email-link {
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    transition:
+      transform 0.3s ease,
+      color 0.3s ease;
+
+    &::before {
+      z-index: 1;
+      position: absolute;
+      top: 0;
+      left: 0;
+      max-width: 0;
+      height: 100%;
+      overflow: hidden;
+      content: attr(data-text);
+      color: t.$colorAccent;
+      white-space: nowrap;
+      transition: max-width 0.3s ease;
+    }
+    @media (hover: hover) {
+      &:hover::before {
+        max-width: 100%;
+      }
+
+      &:hover {
+        color: rgba(t.$colorWhite, 0);
+      }
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
+  }
+
+  &__weekdays {
+    display: block;
+  }
+
+  &__weekend {
+    display: block;
+  }
+}
