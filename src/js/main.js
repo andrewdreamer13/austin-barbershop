@@ -32,6 +32,7 @@ import { initVideoLoader } from "./services/lazyVideoLoader.js";
 import { splitTextIntoSpans } from "./services/splitText.js";
 import { initLightbox } from "./services/lightbox.js";
 import {initDatePicker} from "./components/dataPicker.js";
+import { initCurrentYear } from "./helpers/currentYear.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   console.log("The project works");
@@ -52,7 +53,9 @@ document.addEventListener("DOMContentLoaded", () => {
   initMaps();
   initVideoLoader();
   initLightbox();
+  initCurrentYear();
   initDatePicker();
+  
 
   //splitTextIntoSpans(".hero__title");
   // initUpButton(".footer__up-button");
