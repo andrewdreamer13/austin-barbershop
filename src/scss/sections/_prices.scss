@@ -48,20 +48,23 @@
   &__list-item {
     width: 100%;
     @include t.flex-mix(space-between, flex-start, row, 30px);
-    padding-bottom: 20px;
+    padding-bottom: 10px;
 
     &:not(:last-child) {
       border-bottom: 1px solid rgba(t.$colorWhite, 0.3);
     }
   }
 
-
   &__list-title {
     margin-bottom: 10px;
     color: t.$colorAccent;
     font-weight: 600;
     font-size: 22px;
+    line-height: 1;
     font-family: t.$font;
+     @media (max-width: 576px) {
+      margin-bottom: 5px;
+    }
   }
 
   &__list-description {
@@ -69,6 +72,10 @@
     font-weight: 400;
     font-size: 18px;
     font-family: t.$font;
+
+    @media (max-width: 576px) {
+      display: none;
+    }
   }
 
   &__list-price {
@@ -79,8 +86,11 @@
     color: t.$colorWhite;
     font-weight: 400;
     font-size: 18px;
-    font-family: t.$font;
     line-height: 1;
+    font-family: t.$font;
+     @media (max-width: 576px) {
+      font-size: 16px;
+    }
   }
 
   &__buttons {
@@ -93,9 +103,9 @@
   }
 
   &__direction-button {
+    min-width: 250px;
     background-color: t.$colorSuccess;
     transition: transform 0.3s ease;
-    min-width: 250px;
 
     &::before {
       z-index: -1;
@@ -120,9 +130,9 @@
   }
 
   &__book-button {
+    min-width: 250px;
     background-color: t.$colorAccent;
     transition: transform 0.3s ease;
-    min-width: 250px;
 
     &::before {
       z-index: -1;
