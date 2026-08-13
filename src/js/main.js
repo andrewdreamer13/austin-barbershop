@@ -31,6 +31,7 @@ import { initMaps } from "./services/lazyMapLoader.js";
 import { initVideoLoader } from "./services/lazyVideoLoader.js";
 import { splitTextIntoSpans } from "./services/splitText.js";
 import { initLightbox } from "./services/lightbox.js";
+import {initDatePicker} from "./components/dataPicker.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   console.log("The project works");
@@ -45,13 +46,13 @@ document.addEventListener("DOMContentLoaded", () => {
   initTabs("#gallery-tabs");
   initGallery();
   initCookieBanner();
-  initCustomSelect("#cities", optionsData.cities);
-  initCustomSelect("#countries", optionsData.countries);
-  initFormHandler("#form1");
+  initCustomSelect("#services", optionsData.services);
+  initFormHandler("#contacts-form");
   initResizableSwiper();
   initMaps();
   initVideoLoader();
   initLightbox();
+  initDatePicker();
 
   //splitTextIntoSpans(".hero__title");
   // initUpButton(".footer__up-button");

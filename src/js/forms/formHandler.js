@@ -1,19 +1,9 @@
-
-/**
- * Handles form initialization, dynamic multi-country phone input masking, real-time input validation, and asynchronous form submission.
- * 
- * 1. `initFormHandler` - Attaches validation, phone mask formatting, and submit event handlers to target form elements.
- * 2. `initPhoneMask` - Applies automatic phone masking and country code formatting to telephone inputs based on user input and country patterns.
- * 3. `validateField` - Performs validation on required fields, names, email addresses, and phone numbers, updating error UI states accordingly.
- * 4. `handleFormSubmit` - Asynchronously sends form data via Fetch API, toggles UI loading states, resets fields upon success, and triggers a confirmation modal.
- */
-
 import { phoneMasks } from "../data/phoneMasks.js";
 import { openModal } from "../components/modalManager.js";
 
 const errorMessages = {
   empty: "This field is required",
-  shortName: "Name must be at least 2 characters",
+  shortName: "Must be at least 2 characters",
   invalidName: "Only letters and spaces allowed",
   invalidEmail: "Please enter a valid email address",
   invalidPhone: "Invalid phone number for selected country",
@@ -50,14 +40,17 @@ export function initFormHandler(formSelector) {
     inputs.forEach((input) => {
       input.addEventListener("blur", () => validateField(input));
 
-      input.addEventListener("input", () => {
-        const parent = input.closest(".form__input-box");
-        if (
-          input.type === "hidden" ||
-          (parent && parent.classList.contains("_is-invalid"))
-        ) {
-          validateField(input);
-        }
+      // Слушаем и input, и change (для кастомных селектов и флэтпикра)
+      ["input", "change"].forEach((eventType) => {
+        input.addEventListener(eventType, () => {
+          const parent = input.closest(".form__input-box");
+          if (
+            input.type === "hidden" ||
+            (parent && parent.classList.contains("_is-invalid"))
+          ) {
+            validateField(input);
+          }
+        });
       });
     });
 
@@ -74,10 +67,14 @@ export function initFormHandler(formSelector) {
       if (isFormValid) {
         handleFormSubmit(form);
       } else {
-        const firstError = form.querySelector(
-          "._is-invalid input, ._is-invalid textarea",
-        );
-        if (firstError) firstError.focus();
+        // Умный фокус: ищет видимый элемент (инпут, кнопку селекта или textarea)
+        const firstErrorBlock = form.querySelector("._is-invalid");
+        if (firstErrorBlock) {
+          const focusable = firstErrorBlock.querySelector(
+            "input:not([type='hidden']), textarea, button",
+          );
+          if (focusable) focusable.focus();
+        }
       }
     });
   });
@@ -188,7 +185,10 @@ function validateField(input) {
   if (input.hasAttribute("required") && value === "") {
     isValid = false;
     message = errorMessages.empty;
-  } else if (input.name === "name" && value !== "") {
+  } else if (
+    (input.name === "name" || input.name === "lastName") &&
+    value !== ""
+  ) {
     const nameRegex = /^[a-zA-Zа-яА-ЯёЁіІїЇєЄґҐ\s\-]+$/;
     if (value.length < 2) {
       isValid = false;
@@ -242,11 +242,14 @@ async function handleFormSubmit(form) {
   const submitBtn =
     form.querySelector(".form__submit") ||
     form.querySelector('button[type="submit"]');
-  const originalText = submitBtn ? submitBtn.textContent : "Send message";
 
-  
-  if (submitBtn) {
-    submitBtn.textContent = "Sending...";
+  const btnTextEl = submitBtn
+    ? submitBtn.querySelector("span") || submitBtn
+    : null;
+  const originalText = btnTextEl ? btnTextEl.textContent : "Submit";
+
+  if (submitBtn && btnTextEl) {
+    btnTextEl.textContent = "Sending...";
     submitBtn.disabled = true;
   }
 
@@ -264,13 +267,11 @@ async function handleFormSubmit(form) {
     const data = await response.json();
 
     if (response.ok && data.success) {
-      
       form.reset();
       form.querySelectorAll(".form__input-box").forEach((box) => {
         box.classList.remove("_is-valid", "_is-invalid");
       });
 
-      
       const modalId = form.getAttribute("data-modal-success");
       const successModal = document.getElementById(modalId);
 
@@ -286,11 +287,9 @@ async function handleFormSubmit(form) {
     alert("Connection error. Please try again later.");
     console.error("[FormHandler Fetch Error]:", error);
   } finally {
-   
-    if (submitBtn) {
-      submitBtn.textContent = originalText;
+    if (submitBtn && btnTextEl) {
+      btnTextEl.textContent = originalText; // Возвращаем исходный текст внутрь <span>
       submitBtn.disabled = false;
     }
   }
 }
-

@@ -54,7 +54,7 @@
 
 .title {
   position: relative;
-  width: max-content;
+  width: fit-content;
   margin: 0 auto;
   padding-bottom: 20px;
   @include t.fluid-prop("padding-bottom", 12, 20, 320, 950);
@@ -81,5 +81,6 @@
     line-height: 1;
     font-family: t.$font;
     text-align: center;
+    white-space: wrap;
   }
 }

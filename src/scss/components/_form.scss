@@ -1,18 +1,29 @@
 @use "../tools" as t;
 
 .form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(245px, 365px));
+  column-gap: 10px;
+  row-gap: 33px;
+  @include t.fluid-prop("row-gap", 18, 33, 320, 900);
   width: 100%;
-  max-width: 600px;
-  margin: 0 auto;
+  @include t.fluid-prop("padding", 10, 30, 320, 900);
+  border-radius: 10px;
+  background-color: t.$colorAccent;
 
-  border: 1px solid;
-  @include t.flex-mix(flex-start, flex-start, column, 25px);
+  @media (max-width: 576px) {
+    grid-template-columns: 1fr;
+  }
+
 
   &__input-box {
     position: relative;
     width: 100%;
-    height: 49px;
-    
+    height: 60px;
+
+    &:has(.form__textarea) {
+      grid-column: 1 / -1;
+    }
 
     &._is-invalid {
       .form__error {
@@ -32,28 +43,39 @@
   }
 
   &__label {
-     display: none;
+    display: block;
+    color: t.$colorBlack;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1;
+    font-family: t.$font;
   }
 
   &__input {
     width: 100%;
-    height: 100%;
-    padding: 16px 20px;
-    border-radius: 15px;
-     background: #666565;;
-    box-shadow: 0 0 8px 0 rgba(66, 83, 69, 0.14);
-    color: var(--color-text);
-    // text-transform: capitalize;
+    height: 42px;
+    padding: 10px;
+    border: 1px solid t.$colorBlack;
+    border-radius: 4px;
+    background-color: t.$colorAccent;
+    color: t.$colorBlack;
+    font-size: 18px;
+    line-height: 1;
+   
 
-    &:focus-visible {
-      outline: none;
-      box-shadow: 0 0 8px 0  var(--color-text);
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    t:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+      -webkit-text-fill-color: t.$colorBlack !important;
     }
 
     &::placeholder {
-      color:  var(--color-text);
-      font-size: 14px;
-      opacity: 1;
+      color: t.$colorBlack;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 1.2;
+      font-family: t.$font;
     }
   }
 
@@ -63,9 +85,11 @@
     position: absolute;
     top: 100%;
     left: 0;
-    padding: 3px 20px;
+    padding: 3px 10px;
     color: t.$colorError;
     font-size: 12px;
+    line-height: 1;
+    letter-spacing: 0.5px;
     opacity: 0;
     transition:
       opacity 0.3s ease,
@@ -74,28 +98,64 @@
   }
 
   &__textarea {
-     width: 100%;
+    width: 100%;
     height: 49px;
-    padding: 10px 20px;
-    border-radius: 15px;
-    background: t.$colorWhite;
-    box-shadow: 0 0 8px 0 rgba(66, 83, 69, 0.14);
-   color: var(--color-text);
-    text-transform: capitalize;
-     resize: none;
-
-    &:focus-visible {
-      outline: none;
-      box-shadow: 0 0 8px 0 var(--color-text);
-    }
+    padding: 10px;
+    border: 1px solid t.$colorBlack;
+    border-radius: 6px;
+    background-color: t.$colorAccent;
+    color: t.$colorBlack;
+    font-size: 18px;
+    resize: none;
 
     &::placeholder {
-     color: var(--color-text);
-      font-size: 14px;
-      opacity: 1;
+      color: t.$colorBlack;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 1.2;
+      font-family: t.$font;
     }
   }
 
+  &__date-icon {
+    position: absolute;
+    top: 30px;
+    right: 20px;
+    width: 14px;
+    height: 14px;
+    fill: t.$colorBlack;
+  }
+
   &__submit {
+    grid-column: 1 / -1;
+    background-color: t.$colorBlack;
+    transition:
+      transform 0.3s ease,
+      color 0.3s ease;
+
+    &::before {
+      z-index: -1;
+      position: absolute;
+      inset: 0;
+      transform: scaleX(0);
+      transform-origin: center;
+      border-radius: 6px;
+      background-color: t.$colorWhite;
+      content: "";
+      transition: transform 0.3s ease;
+    }
+    @media (hover: hover) {
+      &:hover::before {
+        transform: scaleX(1);
+      }
+
+      &:hover span {
+        color: t.$colorBlack;
+      }
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
   }
 }

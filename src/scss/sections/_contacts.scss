@@ -2,7 +2,7 @@
 
 .contacts {
   width: 100%;
-  overflow: hidden;
+  // overflow: hidden;
   @include t.fluid-prop("padding-top", 70, 150, 320, 950);
   @include t.fluid-prop("padding-bottom", 50, 100, 320, 950);
   background-image:
@@ -172,5 +172,9 @@
 
   &__weekend {
     display: block;
+  }
+
+  &__form {
+
   }
 }

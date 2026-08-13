@@ -5,6 +5,7 @@
 * {
   &:focus-visible {
     outline-color: t.$colorWhite;
+    outline-offset: 2px;
   }
 }
 
