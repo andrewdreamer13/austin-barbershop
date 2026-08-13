@@ -1,14 +1,75 @@
+@use "../tools" as t;
 
 .success-modal {
+  position: relative;
+  @include t.fluid-prop("width", 290, 636, 320, 768);
+  padding: 30px 15px 50px 15px;
+  border-radius: 6px;
+  background-color: t.$colorAccent;
 
-    &__icon {
+  &__close-btn {
+    position: absolute;
+    top: -70px;
+    right: 10px;
+    padding: 12px;
+    border-radius: 8px;
+    background-color: t.$colorAccent;
+    isolation: isolate;
+    color: t.$colorBlack;
+    font-weight: 600;
+    font-size: 35px;
+    line-height: 1;
+    transition: transform 0.3s ease;
+
+    &::before {
+      z-index: -1;
+      position: absolute;
+      inset: 0;
+      transform: scaleX(0);
+      transform-origin: center;
+      border-radius: 6px;
+      background-color: t.$colorSuccess;
+      content: "";
+      transition: transform 0.3s ease;
+    }
+    @media (hover: hover) {
+      &:hover::before {
+        transform: scaleX(1);
+      }
     }
 
-    &__title {
-      font-size: 35px;
+    &:active {
+      transform: scale(0.95);
     }
+  }
 
-    &__text {
-      font-size: 25px;
+  &__icon {
+    margin-bottom: 30px;
+    text-align: center;
+
+    svg {
+      width: 100px;
+      height: 100px;
+      fill: t.$colorBlack;
     }
+  }
+
+  &__title {
+    color: t.$colorBlack;
+    font-size: 35px;
+    @include t.fluid-prop("font-size", 28, 35, 320, 576);
+    margin-bottom: 20px;
+    line-height: 1;
+    font-family: t.$font;
+    text-align: center;
+  }
+
+  &__text {
+    max-width: 400px;
+    margin: 0 auto;
+    color: t.$colorBlack;
+    font-size: 18px;
+    font-family: t.$font;
+    text-align: center;
+  }
 }

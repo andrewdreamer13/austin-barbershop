@@ -64,7 +64,11 @@ export const initModal = () => {
 
   document.querySelectorAll(".modal").forEach((modal) => {
     modal.addEventListener("click", (e) => {
-      if (e.target === modal || e.target.closest(".modal__close-btn")) {
+      if (
+        e.target === modal ||
+        e.target.closest(".success-modal__close-btn") ||
+        e.target.closest(".modal__close-btn")
+      ) {
         closeModal();
       }
     });
