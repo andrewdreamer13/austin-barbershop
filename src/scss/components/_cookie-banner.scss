@@ -35,8 +35,7 @@
     padding: 20px;
     gap: 15px;
     border-radius: 12px;
-    background-color: #fff;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    background-color: t.$colorBlack;
     pointer-events: auto;
 
     @media (min-width: 768px) {
@@ -48,9 +47,10 @@
 
   &__text {
     margin: 0;
-    color: #333;
+    color:t.$colorWhite;
     font-size: 14px;
     line-height: 1.4;
+    font-family: t.$font;
   }
 
   &__buttons {
@@ -64,26 +64,31 @@
     border: none;
     border-radius: 6px;
     font-size: 14px;
-    transition: all 0.3s ease;
+    font-family: t.$font;
+
+    transition: color 0.3s ease, background-color 0.3s ease;
 
     &--accept {
-      background-color: #000;
-      color: #fff;
+      background-color: t.$colorAccent;
+       color: t.$colorBlack;
 
       @media (hover: hover) {
         &:hover {
-          background-color: #333;
+          background-color: t.$colorWhite;
+
         }
       }
     }
 
     &--decline {
-      background-color: #f0f0f0;
-      color: #333;
+      background-color: transparent;
+      color:  t.$colorWhite;
+      border: 1px solid t.$colorWhite;
 
       @media (hover: hover) {
         &:hover {
-          background-color: #e0e0e0;
+          background-color: t.$colorWhite;
+       color: t.$colorBlack;
         }
       }
     }

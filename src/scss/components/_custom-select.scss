@@ -45,7 +45,7 @@
     position: absolute;
     top: calc(100% + 8px);
     left: 0;
-    width: 100%;
+    width: max-content;
     max-height: 0;
     overflow: clip;
     border: 1px solid t.$colorBlack;
@@ -63,7 +63,7 @@
   }
 
   &__option {
-    padding: 10px;
+    padding:8px 10px;
     color: t.$colorBlack;
     font-size: 18px;
     line-height: 1;
