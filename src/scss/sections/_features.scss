@@ -10,6 +10,7 @@
   background-size:cover;
   background-repeat: no-repeat;
   background-color: t.$colorBg;
+  --overlay-opacity: 1;
 
   @media (min-width: 1920px) {
     @include t.fluid-prop("padding-top", 150, 200, 1920, 2700);
@@ -25,6 +26,7 @@
     right: -5px;
     pointer-events: none; 
     z-index: 1;
+    background-color: rgba(31, 31, 33, var(--overlay-opacity, 1));
     background-image:radial-gradient(
       ellipse 75% 70% at 35% 60%,
       rgba(31, 31, 33, 0.6) 0%,

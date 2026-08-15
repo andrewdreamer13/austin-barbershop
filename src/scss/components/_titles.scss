@@ -65,17 +65,19 @@
   @include t.fluid-prop("padding-bottom", 12, 20, 320, 950);
   @include t.flex-mix(center, center, column, 0);
 
+  --after-y: 20px;
+  --after-opacity: 0;
+
   &::after {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
     width: 100px;
     height: 5px;
+    margin-top: 20px;
     @include t.fluid-prop("height", 3, 5, 320, 950);
-    transform: translateX(-50%);
     border-radius: 2px;
     background-color: t.$colorAccent;
     content: "";
+    transform: translateY(var(--after-y));
+    opacity: var(--after-opacity);
   }
   &__text {
     display: block;

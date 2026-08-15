@@ -35,6 +35,7 @@ import { initCurrentYear } from "./helpers/currentYear.js";
 import { initSyncDataAttrWithText } from "./helpers/syncDataAttrWithText.js";
 import { initLongTextWatcher } from "./helpers/longTextWatcher.js";
 import {initFirstScreenAnimation} from "./animations/firstScreenAnimation.js";
+import {initFeaturesAnimation} from "./animations/featuresAnimation.js"
 
 document.addEventListener("DOMContentLoaded", () => {
   console.log("The project works");
@@ -61,6 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initSyncDataAttrWithText(".footer__author", "text");
   initLongTextWatcher(".main-title__word");
   initFirstScreenAnimation();
+  initFeaturesAnimation();
 
   //splitTextIntoSpans(".hero__title");
   // initUpButton(".footer__up-button");
