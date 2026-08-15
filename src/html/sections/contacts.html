@@ -3,81 +3,84 @@
   id="contacts"
 >
   <div class="container">
-    <h2 class="title contacts__title">
-      <span class="title__text">The Chair Is Ready</span>
-      <span class="title__text">Drop a Line or Stop By</span>
-    </h2>
-    <p class="contacts__description">
-      From securing your spot to answering your questions, we’re here to ensure
-      a seamless experience before you even step through the door. Check our
-      details below or send a direct message—we’ll respond in no time.
-    </p>
-    <div class="contacts__cards">
-      <article class="contacts__card">
-        <div class="contacts__icon-box icon-box">
-          <svg
-            class="icon-box__svg"
-            aria-hidden="true"
-          >
-            <use href="#icons-map-pin"></use>
-          </svg>
-        </div>
-        <h3 class="contacts__card-title">Address</h3>
-        <div class="contacts__card-info">
-          <address class="contacts__address">
-            <span class="contacts__address-line">3862 Ashton Lane</span>
-            <span class="contacts__address-line">Austin, TX</span>
-            <span class="contacts__address-line">78741</span>
-          </address>
-        </div>
-      </article>
-      <article class="contacts__card">
-        <div class="contacts__icon-box icon-box">
-          <svg
-            class="icon-box__svg"
-            aria-hidden="true"
-          >
-            <use href="#icons-phone"></use>
-          </svg>
-        </div>
-        <h3 class="contacts__card-title">Contact</h3>
-        <div class="contacts__card-info">
-          <a
-            class="contacts__phone-link"
-            href="tel:+15124969838"
-            data-text="+1&nbsp;512-496-9838"
-          >
-            +1 512-496-9838
-          </a>
-          <a
-            class="contacts__email-link"
-            href="mailto:barber@barber.com"
-            data-text="barber@barber.com"
-          >
-            barber@barber.com
-          </a>
-        </div>
-      </article>
-      <article class="contacts__card">
-        <div class="contacts__icon-box icon-box">
-          <svg
-            class="icon-box__svg"
-            aria-hidden="true"
-          >
-            <use href="#icons-clock"></use>
-          </svg>
-        </div>
-        <h3 class="contacts__card-title">Open Hours</h3>
-        <div class="contacts__card-info">
-          <span class="contacts__weekdays">Weekdays: 10am – 8pm</span>
-          <span class="contacts__weekend">Weekend: 11am – 4pm</span>
-        </div>
-      </article>
+    <div class="contacts__inner">
+      <h2 class="title contacts__title">
+        <span class="title__text">The Chair Is Ready</span>
+        <span class="title__text">Drop a Line or Stop By</span>
+      </h2>
+      <p class="contacts__description">
+        From securing your spot to answering your questions, we’re here to
+        ensure a seamless experience before you even step through the door.
+        Check our details below or send a direct message—we’ll respond in no
+        time.
+      </p>
+      <div class="contacts__cards">
+        <article class="contacts__card">
+          <div class="contacts__icon-box icon-box">
+            <svg
+              class="icon-box__svg"
+              aria-hidden="true"
+            >
+              <use href="#icons-map-pin"></use>
+            </svg>
+          </div>
+          <h3 class="contacts__card-title">Address</h3>
+          <div class="contacts__card-info">
+            <address class="contacts__address">
+              <span class="contacts__address-line">3862 Ashton Lane</span>
+              <span class="contacts__address-line">Austin, TX</span>
+              <span class="contacts__address-line">78741</span>
+            </address>
+          </div>
+        </article>
+        <article class="contacts__card">
+          <div class="contacts__icon-box icon-box">
+            <svg
+              class="icon-box__svg"
+              aria-hidden="true"
+            >
+              <use href="#icons-phone"></use>
+            </svg>
+          </div>
+          <h3 class="contacts__card-title">Contact</h3>
+          <div class="contacts__card-info">
+            <a
+              class="contacts__phone-link"
+              href="tel:+15124969838"
+              data-text="+1&nbsp;512-496-9838"
+            >
+              +1 512-496-9838
+            </a>
+            <a
+              class="contacts__email-link"
+              href="mailto:barber@barber.com"
+              data-text="barber@barber.com"
+            >
+              barber@barber.com
+            </a>
+          </div>
+        </article>
+        <article class="contacts__card">
+          <div class="contacts__icon-box icon-box">
+            <svg
+              class="icon-box__svg"
+              aria-hidden="true"
+            >
+              <use href="#icons-clock"></use>
+            </svg>
+          </div>
+          <h3 class="contacts__card-title">Open Hours</h3>
+          <div class="contacts__card-info">
+            <span class="contacts__weekdays">Weekdays: 10am – 8pm</span>
+            <span class="contacts__weekend">Weekend: 11am – 4pm</span>
+          </div>
+        </article>
+      </div>
+      <load
+        class="contacts__form"
+        id="contacts-form"
+        src="/src/html/components/form.html"
+      />
     </div>
-    <load
-      class="contacts__form"
-      id="contacts-form"
-      src="/src/html/components/form.html"
-    />
   </div>
 </section>

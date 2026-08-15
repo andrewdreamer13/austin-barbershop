@@ -1,20 +1,11 @@
 @use "../tools" as t;
 
 .hero {
+  position: relative;
   width: 100%;
-  overflow: hidden;
   @include t.fluid-prop("padding-top", 132, 252, 320, 950);
   @include t.fluid-prop("padding-bottom", 50, 100, 320, 950);
-  background-image:
-    radial-gradient(
-      ellipse 100% 70% at 50% 40%,
-      rgba(31, 31, 33, 0) 0%,
-      rgba(31, 31, 33, 0.1) 0%,
-      rgba(31, 31, 33, 0.8) 40%,
-      rgba(31, 31, 33, 1) 50%,
-      #1f1f21 75%
-    ),
-    url("/src/assets/img/webp/bg-1.webp");
+  background-image: url("/src/assets/img/webp/bg-1.webp");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -25,7 +16,28 @@
     @include t.fluid-prop("padding-bottom", 102, 152, 320, 2700);
   }
 
+  &::before {
+     z-index: 1;
+    position: absolute;
+    top: -3px;
+    right: -3px;
+    bottom: -3px;
+    left: -3px;
+    background-image: radial-gradient(
+      ellipse 100% 70% at 50% 40%,
+      rgba(31, 31, 33, 0) 0%,
+      rgba(31, 31, 33, 0.1) 0%,
+      rgba(31, 31, 33, 0.8) 40%,
+      rgba(31, 31, 33, 1) 50%,
+      #1f1f21 75%
+    );
+    content: "";
+    pointer-events: none;
+  }
+
   &__inner {
+    position: relative;
+    z-index: 2;
     width: 100%;
     @include t.flex-mix(center, center, column);
   }

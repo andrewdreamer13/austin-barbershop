@@ -1,28 +1,43 @@
 @use "../tools" as t;
 
 .features {
+  position: relative;
   width: 100%;
-  overflow: hidden;
   @include t.fluid-prop("padding-top", 50, 100, 320, 950);
   @include t.fluid-prop("padding-bottom", 50, 100, 320, 950);
-  background-image:
-    radial-gradient(
-      ellipse 75% 70% at 35% 60%,
-      rgba(31, 31, 33, 0.6) 0%,
-      rgba(31, 31, 33, 0.4) 25%,
-      rgba(31, 31, 33, 0.8) 40%,
-      rgba(31, 31, 33, 1) 50%,
-      #1f1f21 75%
-    ),
-    url("/src/assets/img/webp/bg-10.webp");
+  background-image:url("/src/assets/img/webp/bg-10.webp");
   background-position: center center;
-  background-size: cover;
+  background-size:cover;
   background-repeat: no-repeat;
   background-color: t.$colorBg;
 
   @media (min-width: 1920px) {
     @include t.fluid-prop("padding-top", 150, 200, 1920, 2700);
     @include t.fluid-prop("padding-bottom", 100, 200, 1920, 2700);
+  }
+
+   &::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    bottom: -5px;
+    left: -5px;
+    right: -5px;
+    pointer-events: none; 
+    z-index: 1;
+    background-image:radial-gradient(
+      ellipse 75% 70% at 35% 60%,
+      rgba(31, 31, 33, 0.6) 0%,
+      rgba(31, 31, 33, 0.4) 25%,
+      rgba(31, 31, 33, 0.8) 40%,
+      rgba(31, 31, 33, 1) 50%,
+      #1f1f21 75%
+    ) ;
+  }
+
+  &__inner {
+    position: relative;
+    z-index: 2;
   }
 
   &__title {
