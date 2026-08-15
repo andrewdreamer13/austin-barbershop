@@ -57,7 +57,9 @@ document.addEventListener("DOMContentLoaded", () => {
   initLightbox();
   initCurrentYear();
   initDatePicker();
+  initSyncDataAttrWithText(".header__social-link", "text");
   initSyncDataAttrWithText(".main-title__word", "text");
+  initSyncDataAttrWithText(".footer__author", "text");
   initLongTextWatcher(".main-title__word");
 
   //splitTextIntoSpans(".hero__title");
