@@ -33,6 +33,8 @@ import { splitTextIntoSpans } from "./services/splitText.js";
 import { initLightbox } from "./services/lightbox.js";
 import {initDatePicker} from "./components/dataPicker.js";
 import { initCurrentYear } from "./helpers/currentYear.js";
+import { initSyncDataAttrWithText } from "./helpers/syncDataAttrWithText.js";
+import { initLongTextWatcher } from "./helpers/longTextWatcher.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   console.log("The project works");
@@ -55,7 +57,8 @@ document.addEventListener("DOMContentLoaded", () => {
   initLightbox();
   initCurrentYear();
   initDatePicker();
-  
+  initSyncDataAttrWithText(".main-title__word", "text");
+  initLongTextWatcher(".main-title__word");
 
   //splitTextIntoSpans(".hero__title");
   // initUpButton(".footer__up-button");

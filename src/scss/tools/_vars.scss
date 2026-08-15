@@ -1,15 +1,14 @@
 @use "sass:map";
 
 // Typography
-$fontTitle: 'broncoPersonalUse', Georgia, serif;
-$font: 'Rokkitt', 'Times New Roman', serif;
+$fontTitle: "broncoPersonalUse", "Arial Narrow", "Trebuchet MS", sans-serif;
+$font: "Rokkitt", "Times New Roman", serif;
 
 //  Colors
-$colorAccent: #E5A51A;
-$colorBg: #1F1F21;
+$colorAccent: #e5a51a;
+$colorBg: #1f1f21;
 $colorBlack: #000;
 $colorWhite: #fff;
-$colorError:    #ff4d4d;
-$colorSuccess:  #6DAA23;
-$colorModalBg:  #000000d1;
-
+$colorError: #ff4d4d;
+$colorSuccess: #6daa23;
+$colorModalBg: #000000d1;
