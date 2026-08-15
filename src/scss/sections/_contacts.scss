@@ -10,10 +10,15 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-color: t.$colorBg;
+  scroll-margin-top: -100px;
 
   @media (min-width: 1920px) {
     @include t.fluid-prop("padding-top", 150, 200, 1920, 2700);
     @include t.fluid-prop("padding-bottom", 100, 200, 1920, 2700);
+  }
+
+   @media (max-width: 768px) {
+    scroll-margin-top: -60px; 
   }
 
   &::before {

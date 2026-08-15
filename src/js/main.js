@@ -13,7 +13,6 @@ import { phoneMasks } from "./data/phoneMasks.js";
 
 import { initPreloader } from "./components/preloader.js";
 import { initBurger } from "./components/burger.js";
-import { initAppearance } from "./animations/appearance.js";
 import { initChangeTheme } from "./services/changeTheme.js";
 import { initModal } from "./components/modalManager.js";
 import { initLazySvg } from "./services/lazySvgLoader.js";
@@ -35,6 +34,7 @@ import {initDatePicker} from "./components/dataPicker.js";
 import { initCurrentYear } from "./helpers/currentYear.js";
 import { initSyncDataAttrWithText } from "./helpers/syncDataAttrWithText.js";
 import { initLongTextWatcher } from "./helpers/longTextWatcher.js";
+import {initFirstScreenAnimation} from "./animations/firstScreenAnimation.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   console.log("The project works");
@@ -43,7 +43,6 @@ document.addEventListener("DOMContentLoaded", () => {
   initSliders();
   initChangeTheme("#theme");
   initModal();
-  initAppearance();
   initAccordion("#faq");
   initFocusManager();
   initTabs("#gallery-tabs");
@@ -61,6 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initSyncDataAttrWithText(".main-title__word", "text");
   initSyncDataAttrWithText(".footer__author", "text");
   initLongTextWatcher(".main-title__word");
+  initFirstScreenAnimation();
 
   //splitTextIntoSpans(".hero__title");
   // initUpButton(".footer__up-button");
