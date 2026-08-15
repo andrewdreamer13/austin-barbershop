@@ -30,12 +30,13 @@ import { initMaps } from "./services/lazyMapLoader.js";
 import { initVideoLoader } from "./services/lazyVideoLoader.js";
 import { splitTextIntoSpans } from "./services/splitText.js";
 import { initLightbox } from "./services/lightbox.js";
-import {initDatePicker} from "./components/dataPicker.js";
+import { initDatePicker } from "./components/dataPicker.js";
 import { initCurrentYear } from "./helpers/currentYear.js";
 import { initSyncDataAttrWithText } from "./helpers/syncDataAttrWithText.js";
 import { initLongTextWatcher } from "./helpers/longTextWatcher.js";
-import {initFirstScreenAnimation} from "./animations/firstScreenAnimation.js";
-import {initFeaturesAnimation} from "./animations/featuresAnimation.js"
+import { initFirstScreenAnimation } from "./animations/firstScreenAnimation.js";
+import { initFeaturesAnimation } from "./animations/featuresAnimation.js";
+import { initPricesAnimation } from "./animations/pricesAnimation.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   console.log("The project works");
@@ -63,6 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initLongTextWatcher(".main-title__word");
   initFirstScreenAnimation();
   initFeaturesAnimation();
+  initPricesAnimation();
 
   //splitTextIntoSpans(".hero__title");
   // initUpButton(".footer__up-button");

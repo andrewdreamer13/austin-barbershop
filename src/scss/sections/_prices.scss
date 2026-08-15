@@ -11,6 +11,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-color: t.$colorBg;
+   --overlay-opacity: 1;
 
   @media (min-width: 1920px) {
     @include t.fluid-prop("padding-top", 150, 200, 1920, 2700);
@@ -24,6 +25,7 @@
     right: -3px;
     bottom: -3px;
     left: -3px;
+    background-color: rgba(31, 31, 33, var(--overlay-opacity, 1));
     background-image: radial-gradient(
       ellipse 65% 85% at 60% 55%,
       rgba(31, 31, 33, 0.5) 0%,
@@ -66,9 +68,10 @@
     width: 100%;
     @include t.flex-mix(space-between, flex-start, row, 30px);
     padding-bottom: 10px;
+    --border-color: rgba(255, 255, 255, 0);
 
     &:not(:last-child) {
-      border-bottom: 1px solid rgba(t.$colorWhite, 0.3);
+      border-bottom: 1px solid var(--border-color);
     }
   }
 
