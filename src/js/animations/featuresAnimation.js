@@ -30,7 +30,7 @@ export const initFeaturesAnimation = () => {
         scrollTrigger: {
           trigger: text,
           start: "top 75%",
-          toggleActions: "play none none reverse",
+          toggleActions: "play none none none",
         },
       },
     );
@@ -46,7 +46,7 @@ export const initFeaturesAnimation = () => {
       scrollTrigger: {
         trigger: title,
         start: "top 75%",
-        toggleActions: "play none none reverse",
+        toggleActions: "play none none none",
       },
     });
   }
@@ -64,7 +64,7 @@ export const initFeaturesAnimation = () => {
         scrollTrigger: {
           trigger: description,
           start: "top 75%",
-          toggleActions: "play none none reverse",
+          toggleActions: "play none none none",
         },
       },
     );
@@ -88,7 +88,7 @@ export const initFeaturesAnimation = () => {
           scrollTrigger: {
             trigger: card,
             start: "top 75%",
-            toggleActions: "play none none reverse",
+            toggleActions: "play none none none",
           },
         },
       );
@@ -107,7 +107,7 @@ export const initFeaturesAnimation = () => {
           scrollTrigger: {
             trigger: card,
             start: "top 75%",
-            toggleActions: "play none none reverse",
+            toggleActions: "play none none none",
           },
         },
       );

@@ -1,35 +1,42 @@
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
 
 export function initLocationAnimation() {
   const locationSection = document.querySelector(".location");
   if (!locationSection) return;
 
-  gsap.to(locationSection, {
+  
+  const createObserver = (target, onEnter, options = {}) => {
+    if (!target) return;
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          onEnter();
+          observer.unobserve(entry.target);
+        }
+      });
+    }, options);
+    observer.observe(target);
+  };
+
+  
+  const overlayTween = gsap.to(locationSection, {
     "--overlay-opacity": 0,
     duration: 1.5,
     ease: "power2.in",
-    scrollTrigger: {
-      trigger: locationSection,
-      start: "top 10%",
-      toggleActions: "play none none reverse",
-    },
+    paused: true,
   });
 
+  createObserver(locationSection, () => overlayTween.play(), {
+    rootMargin: "0px 0px -80% 0px",
+  });
+
+ 
   const title = locationSection.querySelector(".location__title");
   const titleTexts = title?.querySelectorAll(".title__text");
   const description = locationSection.querySelector(".location__description");
 
   if (title && titleTexts?.length) {
-    const headerTl = gsap.timeline({
-      scrollTrigger: {
-        trigger: locationSection,
-        start: "top 40%",
-        toggleActions: "play none none reverse",
-      },
-    });
+    const headerTl = gsap.timeline({ paused: true });
 
     headerTl
       .fromTo(
@@ -67,27 +74,28 @@ export function initLocationAnimation() {
         "-=0.2",
       );
     }
+
+    createObserver(locationSection, () => headerTl.play(), {
+      rootMargin: "0px 0px -35% 0px",
+    });
   }
 
+  // 3. Анимация карты (scale + opacity) (было top 65%)
   const mapWrapper = locationSection.querySelector(".location__map-wrapper");
   if (mapWrapper) {
-    gsap.fromTo(
+    gsap.set(mapWrapper, { autoAlpha: 0, scale: 0.9 });
+
+    createObserver(
       mapWrapper,
-      {
-        autoAlpha: 0,
-        scale: 0.9,
+      () => {
+        gsap.to(mapWrapper, {
+          autoAlpha: 1,
+          scale: 1,
+          duration: 1,
+          ease: "power3.out",
+        });
       },
-      {
-        autoAlpha: 1,
-        scale: 1,
-        duration: 1,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: mapWrapper,
-          start: "top 50%",
-          toggleActions: "play none none reverse",
-        },
-      },
+      { rootMargin: "0px 0px -35% 0px" },
     );
   }
 }

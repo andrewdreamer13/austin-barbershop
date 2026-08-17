@@ -10,6 +10,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-color: t.$colorBg;
+  --overlay-opacity: 1;
   scroll-margin-top: -100px;
 
   @media (min-width: 1920px) {
@@ -17,8 +18,8 @@
     @include t.fluid-prop("padding-bottom", 100, 200, 1920, 2700);
   }
 
-   @media (max-width: 768px) {
-    scroll-margin-top: -60px; 
+  @media (max-width: 768px) {
+    scroll-margin-top: -60px;
   }
 
   &::before {
@@ -36,6 +37,7 @@
       rgba(31, 31, 33, 1) 50%,
       #1f1f21 75%
     );
+    background-color: rgba(31, 31, 33, var(--overlay-opacity, 1));
     content: "";
     pointer-events: none;
   }

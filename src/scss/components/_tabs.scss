@@ -85,11 +85,11 @@
     margin-bottom: 30px;
     gap: 10px;
     width: 100%;
-     aspect-ratio: 2.06 / 1;
+    //  aspect-ratio: 2.06 / 1;
 
     @media (max-width: 768px) {
       grid-template-columns: repeat(2, 1fr);
-        aspect-ratio: 0.9 / 1;
+        // aspect-ratio: 0.9 / 1;
     }
   }
 

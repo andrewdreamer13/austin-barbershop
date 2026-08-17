@@ -39,6 +39,7 @@ import { initFeaturesAnimation } from "./animations/featuresAnimation.js";
 import { initPricesAnimation } from "./animations/pricesAnimation.js";
 import { initGalleryAnimation } from "./animations/galleryAnimation.js";
 import { initLocationAnimation } from "./animations/locationAnimation.js";
+import {initContactsAnimation} from "./animations/contactsAnimation.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   console.log("The project works");
@@ -69,6 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initPricesAnimation();
   initGalleryAnimation();
   initLocationAnimation();
+  initContactsAnimation();
 
   //splitTextIntoSpans(".hero__title");
   // initUpButton(".footer__up-button");

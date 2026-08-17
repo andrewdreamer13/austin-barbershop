@@ -95,7 +95,7 @@ export const initPricesAnimation = () => {
         scrollTrigger: {
           trigger: item,
           start: "top 75%",
-          toggleActions: "play none none reverse",
+          toggleActions: "play none none none",
         },
       },
     );
@@ -107,7 +107,7 @@ export const initPricesAnimation = () => {
       scrollTrigger: {
         trigger: item,
         start: "top 75%",
-        toggleActions: "play none none reverse",
+        toggleActions: "play none none none",
       },
     });
   });
@@ -126,7 +126,7 @@ export const initPricesAnimation = () => {
         scrollTrigger: {
           trigger: pricesSection.querySelector(".prices__buttons"),
           start: "top 75%",
-          toggleActions: "play none none reverse",
+          toggleActions: "play none none none",
         },
       },
     );
