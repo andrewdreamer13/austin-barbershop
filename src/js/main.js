@@ -37,6 +37,7 @@ import { initLongTextWatcher } from "./helpers/longTextWatcher.js";
 import { initFirstScreenAnimation } from "./animations/firstScreenAnimation.js";
 import { initFeaturesAnimation } from "./animations/featuresAnimation.js";
 import { initPricesAnimation } from "./animations/pricesAnimation.js";
+import {initGalleryAnimation} from "./animations/galleryAnimation.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   console.log("The project works");
@@ -65,6 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initFirstScreenAnimation();
   initFeaturesAnimation();
   initPricesAnimation();
+  initGalleryAnimation();
 
   //splitTextIntoSpans(".hero__title");
   // initUpButton(".footer__up-button");

@@ -5,7 +5,6 @@ gsap.registerPlugin(ScrollTrigger);
 
 export const initPricesAnimation = () => {
   const pricesSection = document.querySelector(".prices");
-  //  const pricesTitle = pricesSection.querySelector(".prices__title");
   if (pricesSection) {
     gsap.to(pricesSection, {
       "--overlay-opacity": 0,
@@ -19,7 +18,6 @@ export const initPricesAnimation = () => {
     });
   }
 
-  // 2 и 3. Заголовок и ::after в единой цепочке
   const title = pricesSection.querySelector(".prices__title");
   const titleTexts = title?.querySelectorAll(".title__text");
 
@@ -33,7 +31,7 @@ export const initPricesAnimation = () => {
     });
 
     titleTl
-      // 1. По очереди выезжают строки текста
+
       .fromTo(
         titleTexts,
         { autoAlpha: 0, y: 30 },
@@ -45,7 +43,7 @@ export const initPricesAnimation = () => {
           ease: "power3.out",
         },
       )
-      // 2. Линия выезжает в самом конце (с перекрытием -=0.3s)
+
       .to(
         title,
         {
@@ -57,7 +55,7 @@ export const initPricesAnimation = () => {
         "-=0.3",
       );
   }
-  // 4. Описание секции (.prices__description)
+
   const description = pricesSection.querySelector(".prices__description");
   if (description) {
     gsap.fromTo(
@@ -77,7 +75,6 @@ export const initPricesAnimation = () => {
     );
   }
 
-  // 5. Элементы прайса (.prices__list-item)
   const listItems = pricesSection.querySelectorAll(".prices__list-item");
   listItems.forEach((item) => {
     const itemTitle = item.querySelector(".prices__list-title");
@@ -86,7 +83,6 @@ export const initPricesAnimation = () => {
 
     const parts = [itemTitle, itemDescription, itemPrice].filter(Boolean);
 
-    // Анимация выезда текста/цены
     gsap.fromTo(
       parts,
       { autoAlpha: 0, y: 30 },
@@ -104,7 +100,6 @@ export const initPricesAnimation = () => {
       },
     );
 
-    // Плавное проявление нижней линии
     gsap.to(item, {
       "--border-color": "rgba(255, 255, 255, 0.3)",
       duration: 0.8,
@@ -117,7 +112,6 @@ export const initPricesAnimation = () => {
     });
   });
 
-  // 6. Кнопки (.prices__buttons) — выходят по очереди
   const buttons = pricesSection.querySelectorAll(".prices__buttons .button");
   if (buttons.length) {
     gsap.fromTo(
@@ -127,7 +121,7 @@ export const initPricesAnimation = () => {
         autoAlpha: 1,
         y: 0,
         duration: 0.8,
-        stagger: 0.18, // Сначала Get Directions, затем Book Your Experience
+        stagger: 0.18,
         ease: "power3.out",
         scrollTrigger: {
           trigger: pricesSection.querySelector(".prices__buttons"),

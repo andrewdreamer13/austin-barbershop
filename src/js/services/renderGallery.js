@@ -1,5 +1,6 @@
 import { galleryData } from "../data/galleryData.js";
 
+
 export const initGallery = () => {
   const panels = document.querySelectorAll(".tabs__panel");
 

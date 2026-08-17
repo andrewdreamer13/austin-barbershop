@@ -28,7 +28,7 @@
 
   &__button {
     background-color: t.$colorAccent;
-    transition: transform 0.3s ease;
+    // transition: transform 0.3s ease;
 
     &::before {
       z-index: -1;
@@ -108,7 +108,7 @@
   &__more-button {
     margin: 0 auto;
     background-color: t.$colorAccent;
-    transition: transform 0.3s ease;
+    // transition: transform 0.3s ease;
 
     &::before {
       z-index: -1;

@@ -125,7 +125,7 @@
   &__direction-button {
     min-width: 250px;
     background-color: t.$colorSuccess;
-    transition: transform 0.3s ease;
+    // transition: transform 0.3s ease;
 
     &::before {
       z-index: -1;
@@ -152,7 +152,7 @@
   &__book-button {
     min-width: 250px;
     background-color: t.$colorAccent;
-    transition: transform 0.3s ease;
+    // transition: transform 0.3s ease;
 
     &::before {
       z-index: -1;
@@ -163,7 +163,7 @@
       border-radius: 6px;
       background-color: t.$colorSuccess;
       content: "";
-      transition: transform 0.3s ease;
+       transition: transform 0.3s ease;
     }
     @media (hover: hover) {
       &:hover::before {

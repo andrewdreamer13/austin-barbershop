@@ -9,6 +9,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-color: t.$colorBg;
+  --overlay-opacity: 1;
   scroll-margin-top: -60px;
 
   @media (min-width: 1920px) {
@@ -17,7 +18,7 @@
   }
 
   @media (max-width: 768px) {
-    scroll-margin-top: -80px; 
+    scroll-margin-top: -80px;
   }
 
   &::before {
@@ -35,14 +36,15 @@
       rgba(31, 31, 33, 1) 50%,
       #1f1f21 75%
     );
+    background-color: rgba(31, 31, 33, var(--overlay-opacity, 1));
     content: "";
     pointer-events: none;
   }
 
   &__inner {
+    z-index: 2;
     position: relative;
     width: 100%;
-    z-index: 2;
   }
 
   &__title {
