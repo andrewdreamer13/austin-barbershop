@@ -26,7 +26,7 @@ export function initGalleryAnimation() {
     const headerTl = gsap.timeline({
       scrollTrigger: {
         trigger: title,
-        start: "top 75%",
+        start: "top 40%",
         toggleActions: "play none none reverse",
       },
     });
@@ -91,7 +91,7 @@ export function initGalleryAnimation() {
         y: 0,
         duration: 0.6,
         stagger: 0.2,
-        ease: "power3.out",
+        ease: "power2.out",
       },
     );
   }
@@ -133,7 +133,7 @@ export function initGalleryAnimation() {
         ease: "power3.out",
         scrollTrigger: {
           trigger: ".tabs__content",
-          start: "top 45%",
+          start: "center 62%",
           toggleActions: "play none none reverse",
         },
       },
