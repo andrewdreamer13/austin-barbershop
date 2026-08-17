@@ -10,6 +10,7 @@ export const initCustomMap = (container) => {
     style: "mapbox://styles/andrew-dreamer/cmsohob9k00sh01sabxf33rpc",
     center: [parseFloat(mapLng), parseFloat(mapLat)],
     zoom: 12,
+    cooperativeGestures: true,
   });
 
   map.addControl(new mapboxgl.FullscreenControl());
