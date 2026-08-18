@@ -40,9 +40,9 @@ export function initGalleryAnimation() {
     headerTl
       .fromTo(
         titleTexts,
-        { autoAlpha: 0, y: 30 },
+        { opacity: 0, y: 30 },
         {
-          autoAlpha: 1,
+          opacity: 1,
           y: 0,
           duration: 0.8,
           stagger: 0.15,
@@ -63,8 +63,8 @@ export function initGalleryAnimation() {
     if (description) {
       headerTl.fromTo(
         description,
-        { autoAlpha: 0, y: 20 },
-        { autoAlpha: 1, y: 0, duration: 0.7, ease: "power3.out" },
+        { opacity: 0, y: 20 },
+        { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" },
         "-=0.2",
       );
     }
@@ -81,9 +81,9 @@ export function initGalleryAnimation() {
   if (tabsTrack && tabButtons.length) {
     const tabsTl = gsap.fromTo(
       tabButtons,
-      { autoAlpha: 0, y: 30 },
+      { opacity: 0, y: 30 },
       {
-        autoAlpha: 1,
+        opacity: 1,
         y: 0,
         duration: 0.6,
         stagger: 0.2,
@@ -107,13 +107,13 @@ export function initGalleryAnimation() {
 
 
   if (activeContent) {
-    gsap.set(activeContent, { autoAlpha: 0, y: 30 });
+    gsap.set(activeContent, { opacity: 0, y: 30 });
 
     createObserver(
       activeContent,
       () => {
         gsap.to(activeContent, {
-          autoAlpha: 1,
+          opacity: 1,
           y: 0,
           duration: 1,
           ease: "power3.out",
@@ -125,13 +125,13 @@ export function initGalleryAnimation() {
 
   
   if (activeBtn) {
-    gsap.set(activeBtn, { autoAlpha: 0, y: 20 });
+    gsap.set(activeBtn, { opacity: 0, y: 20 });
 
     createObserver(
       activeBtn,
       () => {
         gsap.to(activeBtn, {
-          autoAlpha: 1,
+          opacity: 1,
           y: 0,
           duration: 0.8,
           ease: "power3.out",

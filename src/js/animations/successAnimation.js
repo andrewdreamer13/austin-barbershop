@@ -10,18 +10,18 @@ export const initSuccessOpenAnimation = (modalElement) => {
 
   tl.fromTo(
     modalElement,
-    { autoAlpha: 0 },
-    { autoAlpha: 1, duration: 0.5, ease: "power2.out" },
+    { opacity: 0 },
+    { opacity: 1, duration: 0.5, ease: "power2.out" },
   );
 
   tl.fromTo(
     content,
     {
-      autoAlpha: 0,
+      opacity: 0,
       scale: 0.85,
     },
     {
-      autoAlpha: 1,
+      opacity: 1,
       scale: 1,
       duration: 0.5,
       ease: "back.out(1.5)",
@@ -49,7 +49,7 @@ export const initSuccessCloseAnimation = (modalElement, onComplete) => {
 
   if (content) {
     tl.to(content, {
-      autoAlpha: 0,
+      opacity: 0,
       scale: 0.85,
       duration: 0.5,
       ease: "power2.in",
@@ -59,7 +59,7 @@ export const initSuccessCloseAnimation = (modalElement, onComplete) => {
   tl.to(
     modalElement,
     {
-      autoAlpha: 0,
+      opacity: 0,
       duration: 0.3,
       ease: "power2.in",
     },

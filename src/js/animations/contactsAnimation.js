@@ -41,9 +41,9 @@ export function initContactsAnimation() {
     headerTl
       .fromTo(
         titleTexts,
-        { autoAlpha: 0, y: 30 },
+        { opacity: 0, y: 30 },
         {
-          autoAlpha: 1,
+          opacity: 1,
           y: 0,
           duration: 0.8,
           stagger: 0.15,
@@ -64,9 +64,9 @@ export function initContactsAnimation() {
     if (description) {
       headerTl.fromTo(
         description,
-        { autoAlpha: 0, y: 20 },
+        { opacity: 0, y: 20 },
         {
-          autoAlpha: 1,
+          opacity: 1,
           y: 0,
           duration: 0.7,
           ease: "power3.out",
@@ -97,9 +97,9 @@ export function initContactsAnimation() {
       if (cardElements.length) {
         cardsTl.fromTo(
           cardElements,
-          { autoAlpha: 0, y: 25 },
+          { opacity: 0, y: 25 },
           {
-            autoAlpha: 1,
+            opacity: 1,
             y: 0,
             duration: 0.5,
             stagger: 0.1,
@@ -118,13 +118,13 @@ export function initContactsAnimation() {
   
   const contactsForm = contactsSection.querySelector(".contacts__form");
   if (contactsForm) {
-    gsap.set(contactsForm, { autoAlpha: 0, scale: 0.95, y: 30 });
+    gsap.set(contactsForm, { opacity: 0, scale: 0.95, y: 30 });
 
     createObserver(
       contactsForm,
       () => {
         gsap.to(contactsForm, {
-          autoAlpha: 1,
+          opacity: 1,
           scale: 1,
           y: 0,
           duration: 0.9,

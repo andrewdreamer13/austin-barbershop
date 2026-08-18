@@ -10,14 +10,14 @@ export function initFooterAnimation() {
   const elementsToAnimate = [copyright, credits].filter(Boolean);
 
   if (elementsToAnimate.length) {
-    gsap.set(elementsToAnimate, { autoAlpha: 0, y: 20 });
+    gsap.set(elementsToAnimate, { opacity: 0, y: 20 });
 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             gsap.to(elementsToAnimate, {
-              autoAlpha: 1,
+              opacity: 1,
               y: 0,
               duration: 0.8,
               stagger: 0.2,

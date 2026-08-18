@@ -21,9 +21,9 @@ export const initFeaturesAnimation = () => {
   titleTexts.forEach((text, index) => {
     gsap.fromTo(
       text,
-      { autoAlpha: 0, y: 30 },
+      { opacity: 0, y: 30 },
       {
-        autoAlpha: 1,
+        opacity: 1,
         y: 0,
         duration: 1.2,
         ease: "power3.out",
@@ -55,9 +55,9 @@ export const initFeaturesAnimation = () => {
   if (description) {
     gsap.fromTo(
       description,
-      { autoAlpha: 0, y: 30 },
+      { opacity: 0, y: 30 },
       {
-        autoAlpha: 1,
+        opacity: 1,
         y: 0,
         duration: 0.9,
         ease: "power3.out",
@@ -78,9 +78,9 @@ export const initFeaturesAnimation = () => {
     if (iconBox) {
       gsap.fromTo(
         iconBox,
-        { autoAlpha: 0, y: 25, scale: 0.9 },
+        { opacity: 0, y: 25, scale: 0.9 },
         {
-          autoAlpha: 1,
+          opacity: 1,
           y: 0,
           scale: 1,
           duration: 0.8,
@@ -97,9 +97,9 @@ export const initFeaturesAnimation = () => {
     if (cardTitleTexts.length) {
       gsap.fromTo(
         cardTitleTexts,
-        { autoAlpha: 0, y: 20 },
+        { opacity: 0, y: 20 },
         {
-          autoAlpha: 1,
+          opacity: 1,
           y: 0,
           duration: 0.7,
           stagger: 0.3,

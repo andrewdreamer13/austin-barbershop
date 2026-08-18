@@ -34,9 +34,9 @@ export const initPricesAnimation = () => {
 
       .fromTo(
         titleTexts,
-        { autoAlpha: 0, y: 30 },
+        { opacity: 0, y: 30 },
         {
-          autoAlpha: 1,
+          opacity: 1,
           y: 0,
           duration: 0.8,
           stagger: 0.15,
@@ -60,9 +60,9 @@ export const initPricesAnimation = () => {
   if (description) {
     gsap.fromTo(
       description,
-      { autoAlpha: 0, y: 30 },
+      { opacity: 0, y: 30 },
       {
-        autoAlpha: 1,
+        opacity: 1,
         y: 0,
         duration: 0.9,
         ease: "power3.out",
@@ -85,9 +85,9 @@ export const initPricesAnimation = () => {
 
     gsap.fromTo(
       parts,
-      { autoAlpha: 0, y: 30 },
+      { opacity: 0, y: 30 },
       {
-        autoAlpha: 1,
+        opacity: 1,
         y: 0,
         duration: 0.7,
         stagger: 0.12,
@@ -116,9 +116,9 @@ export const initPricesAnimation = () => {
   if (buttons.length) {
     gsap.fromTo(
       buttons,
-      { autoAlpha: 0, y: 30 },
+      { opacity: 0, y: 30 },
       {
-        autoAlpha: 1,
+        opacity: 1,
         y: 0,
         duration: 0.8,
         stagger: 0.18,

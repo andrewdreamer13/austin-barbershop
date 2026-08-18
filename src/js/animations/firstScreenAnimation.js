@@ -25,9 +25,9 @@ export const initFirstScreenAnimation = () => {
 
     .fromTo(
       header,
-      { autoAlpha: 0, y: -20 },
+      { opacity: 0, y: -20 },
       {
-        autoAlpha: 1,
+        opacity: 1,
         y: 0,
         duration: 1.8,
         ease: "power3.out",
@@ -37,9 +37,9 @@ export const initFirstScreenAnimation = () => {
 
     .fromTo(
       leftButton,
-      { autoAlpha: 0, y: -30, scale: 0.97 },
+      { opacity: 0, y: -30, scale: 0.97 },
       {
-        autoAlpha: 1,
+        opacity: 1,
         y: 0,
         scale: 1,
         duration: 1.0,
@@ -50,9 +50,9 @@ export const initFirstScreenAnimation = () => {
 
     .fromTo(
       rightButton,
-      { autoAlpha: 0, y: -30, scale: 0.97 },
+      { opacity: 0, y: -30, scale: 0.97 },
       {
-        autoAlpha: 1,
+        opacity: 1,
         y: 0,
         scale: 1,
         duration: 1.0,
@@ -63,9 +63,9 @@ export const initFirstScreenAnimation = () => {
 
     .fromTo(
       heroSubtitle,
-      { autoAlpha: 0, y: -30, scale: 0.98 },
+      { opacity: 0, y: -30, scale: 0.98 },
       {
-        autoAlpha: 1,
+        opacity: 1,
         y: 0,
         scale: 1,
         duration: 1.1,
@@ -76,9 +76,9 @@ export const initFirstScreenAnimation = () => {
 
     .fromTo(
       titleWords[1],
-      { autoAlpha: 0, y: -30, scale: 0.96 },
+      { opacity: 0, y: -30, scale: 0.96 },
       {
-        autoAlpha: 1,
+        opacity: 1,
         y: 0,
         scale: 1,
         duration: 1.2,

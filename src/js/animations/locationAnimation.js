@@ -41,11 +41,11 @@ export function initLocationAnimation() {
     headerTl
       .fromTo(
         titleTexts,
-        { autoAlpha: 0, y: 30 },
+        { opacity: 0, y: 30 },
         {
           autoAlpha: 1,
           y: 0,
-          duration: 0.8,
+        opacity: 0.8,
           stagger: 0.15,
           ease: "power3.out",
         },
@@ -64,9 +64,9 @@ export function initLocationAnimation() {
     if (description) {
       headerTl.fromTo(
         description,
-        { autoAlpha: 0, y: 20 },
+        { opacity: 0, y: 20 },
         {
-          autoAlpha: 1,
+          opacity: 1,
           y: 0,
           duration: 0.7,
           ease: "power3.out",
@@ -80,16 +80,16 @@ export function initLocationAnimation() {
     });
   }
 
-  // 3. Анимация карты (scale + opacity) (было top 65%)
+ 
   const mapWrapper = locationSection.querySelector(".location__map-wrapper");
   if (mapWrapper) {
-    gsap.set(mapWrapper, { autoAlpha: 0, scale: 0.9 });
+    gsap.set(mapWrapper, { opacity: 0, scale: 0.9 });
 
     createObserver(
       mapWrapper,
       () => {
         gsap.to(mapWrapper, {
-          autoAlpha: 1,
+          opacity: 1,
           scale: 1,
           duration: 1,
           ease: "power3.out",

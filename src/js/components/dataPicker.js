@@ -24,5 +24,16 @@ export function initDatePicker() {
         theme: "dark",
       }),
     ],
+
+    onClose: (selectedDates, dateStr, instance) => {
+      const form = instance.element.form;
+      const nextElement = form ? form.querySelector("textarea") : null;
+
+      if (nextElement) {
+        setTimeout(() => {
+          nextElement.focus();
+        }, 10);
+      }
+    },
   });
 }
