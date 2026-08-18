@@ -1,6 +1,4 @@
 
-
-import { initIframeMap } from "../components/iframeMap";
 import { initCustomMap } from "../components/customMap";
 
 export const initMaps = () => {

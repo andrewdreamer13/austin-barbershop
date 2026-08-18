@@ -40,7 +40,6 @@ export function initFormHandler(formSelector) {
     inputs.forEach((input) => {
       input.addEventListener("blur", () => validateField(input));
 
-      // Слушаем и input, и change (для кастомных селектов и флэтпикра)
       ["input", "change"].forEach((eventType) => {
         input.addEventListener(eventType, () => {
           const parent = input.closest(".form__input-box");
@@ -67,7 +66,6 @@ export function initFormHandler(formSelector) {
       if (isFormValid) {
         handleFormSubmit(form);
       } else {
-        // Умный фокус: ищет видимый элемент (инпут, кнопку селекта или textarea)
         const firstErrorBlock = form.querySelector("._is-invalid");
         if (firstErrorBlock) {
           const focusable = firstErrorBlock.querySelector(
@@ -288,7 +286,7 @@ async function handleFormSubmit(form) {
     console.error("[FormHandler Fetch Error]:", error);
   } finally {
     if (submitBtn && btnTextEl) {
-      btnTextEl.textContent = originalText; // Возвращаем исходный текст внутрь <span>
+      btnTextEl.textContent = originalText;
       submitBtn.disabled = false;
     }
   }

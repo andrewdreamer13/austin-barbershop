@@ -1,33 +1,70 @@
+const images = import.meta.glob("../../assets/img/webp/*.webp", {
+  eager: true,
+  import: "default",
+});
+
 export const galleryData = {
-  beard: Array.from({ length: 11 }, (_, index) => {
-    const num = index + 1;
-    return {
-      src: `src/assets/img/webp/beard-${num}.webp`,
-      alt: "beard",
-    };
-  }),
+  beard: [
+    { src: images["../../assets/img/webp/beard-1.webp"], alt: "beard" },
+    { src: images["../../assets/img/webp/beard-2.webp"], alt: "beard" },
+    { src: images["../../assets/img/webp/beard-3.webp"], alt: "beard" },
+    { src: images["../../assets/img/webp/beard-4.webp"], alt: "beard" },
+    { src: images["../../assets/img/webp/beard-5.webp"], alt: "beard" },
+    { src: images["../../assets/img/webp/beard-6.webp"], alt: "beard" },
+    { src: images["../../assets/img/webp/beard-7.webp"], alt: "beard" },
+    { src: images["../../assets/img/webp/beard-8.webp"], alt: "beard" },
+    { src: images["../../assets/img/webp/beard-9.webp"], alt: "beard" },
+    { src: images["../../assets/img/webp/beard-10.webp"], alt: "beard" },
+    { src: images["../../assets/img/webp/beard-11.webp"], alt: "beard" },
+  ],
 
-  boys: Array.from({ length: 12 }, (_, index) => {
-    const num = index + 1;
-    return {
-      src: `src/assets/img/webp/children-${num}.webp`,
-      alt: "children",
-    };
-  }),
+  boys: [
+    { src: images["../../assets/img/webp/children-1.webp"], alt: "children" },
+    { src: images["../../assets/img/webp/children-2.webp"], alt: "children" },
+    { src: images["../../assets/img/webp/children-3.webp"], alt: "children" },
+    { src: images["../../assets/img/webp/children-4.webp"], alt: "children" },
+    { src: images["../../assets/img/webp/children-5.webp"], alt: "children" },
+    { src: images["../../assets/img/webp/children-6.webp"], alt: "children" },
+    { src: images["../../assets/img/webp/children-7.webp"], alt: "children" },
+    { src: images["../../assets/img/webp/children-8.webp"], alt: "children" },
+    { src: images["../../assets/img/webp/children-9.webp"], alt: "children" },
+    { src: images["../../assets/img/webp/children-10.webp"], alt: "children" },
+    { src: images["../../assets/img/webp/children-11.webp"], alt: "children" },
+    { src: images["../../assets/img/webp/children-12.webp"], alt: "children" },
+  ],
 
-  haircut: Array.from({ length: 18 }, (_, index) => {
-    const num = index + 1;
-    return {
-      src: `src/assets/img/webp/hair-${num}.webp`,
-      alt: "hair",
-    };
-  }),
+  haircut: [
+    { src: images["../../assets/img/webp/hair-1.webp"], alt: "hair" },
+    { src: images["../../assets/img/webp/hair-2.webp"], alt: "hair" },
+    { src: images["../../assets/img/webp/hair-3.webp"], alt: "hair" },
+    { src: images["../../assets/img/webp/hair-4.webp"], alt: "hair" },
+    { src: images["../../assets/img/webp/hair-5.webp"], alt: "hair" },
+    { src: images["../../assets/img/webp/hair-6.webp"], alt: "hair" },
+    { src: images["../../assets/img/webp/hair-7.webp"], alt: "hair" },
+    { src: images["../../assets/img/webp/hair-8.webp"], alt: "hair" },
+    { src: images["../../assets/img/webp/hair-9.webp"], alt: "hair" },
+    { src: images["../../assets/img/webp/hair-10.webp"], alt: "hair" },
+    { src: images["../../assets/img/webp/hair-11.webp"], alt: "hair" },
+    { src: images["../../assets/img/webp/hair-12.webp"], alt: "hair" },
+    { src: images["../../assets/img/webp/hair-13.webp"], alt: "hair" },
+    { src: images["../../assets/img/webp/hair-14.webp"], alt: "hair" },
+    { src: images["../../assets/img/webp/hair-15.webp"], alt: "hair" },
+    { src: images["../../assets/img/webp/hair-16.webp"], alt: "hair" },
+    { src: images["../../assets/img/webp/hair-17.webp"], alt: "hair" },
+    { src: images["../../assets/img/webp/hair-18.webp"], alt: "hair" },
+  ],
 
-  mustache: Array.from({ length: 10 }, (_, index) => {
-    const num = index + 1;
-    return {
-      src: `src/assets/img/webp/mustache-${num}.webp`,
-      alt: "mustache",
-    };
-  }),
+  mustache: [
+    { src: images["../../assets/img/webp/mustache-1.webp"], alt: "mustache" },
+    { src: images["../../assets/img/webp/mustache-2.webp"], alt: "mustache" },
+    { src: images["../../assets/img/webp/mustache-3.webp"], alt: "mustache" },
+    { src: images["../../assets/img/webp/mustache-4.webp"], alt: "mustache" },
+    { src: images["../../assets/img/webp/mustache-5.webp"], alt: "mustache" },
+    { src: images["../../assets/img/webp/mustache-6.webp"], alt: "mustache" },
+    { src: images["../../assets/img/webp/mustache-7.webp"], alt: "mustache" },
+    { src: images["../../assets/img/webp/mustache-8.webp"], alt: "mustache" },
+    { src: images["../../assets/img/webp/mustache-9.webp"], alt: "mustache" },
+    { src: images["../../assets/img/webp/mustache-10.webp"], alt: "mustache" },
+  ],
 };
+
