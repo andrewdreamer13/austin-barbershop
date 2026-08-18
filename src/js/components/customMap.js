@@ -1,6 +1,6 @@
 // import mapboxgl from "mapbox-gl";
 
-export const initCustomMap = (container) => {
+export const initCustomMap = async (container) => {
   const { mapLat, mapLng } = container.dataset;
 
   const mapboxgl = (await import("mapbox-gl")).default;

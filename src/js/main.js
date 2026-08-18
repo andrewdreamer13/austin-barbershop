@@ -2,11 +2,6 @@ import "../scss/main.scss";
 import "virtual:svg-icons-register";
 
 import gsap from "gsap";
-import Swiper from "swiper";
-import { Navigation, Pagination } from "swiper/modules";
-
-import "swiper/css";
-import "swiper/css/navigation";
 
 import { optionsData } from "./data/selectOptions.js";
 import { phoneMasks } from "./data/phoneMasks.js";
