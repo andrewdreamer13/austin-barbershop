@@ -45,7 +45,7 @@ export const initFeaturesAnimation = () => {
       ease: "power3.out",
       scrollTrigger: {
         trigger: title,
-        start: "top 75%",
+        start: "top 70%",
         toggleActions: "play none none none",
       },
     });
