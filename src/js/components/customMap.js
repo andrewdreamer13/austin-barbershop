@@ -1,7 +1,9 @@
-import mapboxgl from "mapbox-gl";
+// import mapboxgl from "mapbox-gl";
 
 export const initCustomMap = (container) => {
   const { mapLat, mapLng } = container.dataset;
+
+  const mapboxgl = (await import("mapbox-gl")).default;
 
   mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_TOKEN;
 
