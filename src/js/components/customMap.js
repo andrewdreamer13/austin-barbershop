@@ -3,7 +3,8 @@
 export const initCustomMap = async (container) => {
   const { mapLat, mapLng } = container.dataset;
 
-  const mapboxgl = (await import("mapbox-gl")).default;
+  const mapboxModule = await import("mapbox-gl");
+  const mapboxgl = mapboxModule.default || mapboxModule;
 
   mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_TOKEN;
 

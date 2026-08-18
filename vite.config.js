@@ -23,7 +23,7 @@ export default defineConfig(({ mode }) => {
     plugins: [
       injectHTML(),
       Sitemap({
-        hostname: "https://andrewdreamer13.github.io/austin-barbershop/", 
+        hostname: "https://andrewdreamer13.github.io/austin-barbershop/",
         readable: true,
       }),
       viteImagemin({
@@ -95,6 +95,13 @@ export default defineConfig(({ mode }) => {
           404: path.resolve(__dirname, "404.html"),
         },
         output: {
+          sanitizeFileName(name) {
+            const match = /^[a-z0-9]/i.exec(name);
+            if (!match) {
+              return name.replace(/^[^a-z0-9]+/, "");
+            }
+            return name;
+          },
           assetFileNames: (assetInfo) => {
             let extType = assetInfo.name.split(".").at(-1);
 
