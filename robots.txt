@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://andrewdreamer13.github.io/austin-barbershop/sitemap.xml
