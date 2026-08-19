@@ -13,7 +13,7 @@ export const initPricesAnimation = () => {
       scrollTrigger: {
         trigger: pricesSection,
         start: "center bottom",
-        toggleActions: "play none none reverse",
+        toggleActions: "play none none none",
       },
     });
   }
@@ -26,7 +26,7 @@ export const initPricesAnimation = () => {
       scrollTrigger: {
         trigger: title,
         start: "top 75%",
-        toggleActions: "play none none reverse",
+        toggleActions: "play none none none",
       },
     });
 
@@ -69,7 +69,7 @@ export const initPricesAnimation = () => {
         scrollTrigger: {
           trigger: description,
           start: "top 75%",
-          toggleActions: "play none none reverse",
+          toggleActions: "play none none none",
         },
       },
     );

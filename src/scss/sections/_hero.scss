@@ -4,7 +4,7 @@
   position: relative;
   width: 100%;
   @include t.fluid-prop("padding-top", 132, 252, 320, 950);
-  @include t.fluid-prop("padding-bottom", 50, 100, 320, 950);
+  @include t.fluid-prop("padding-bottom", 25, 50, 320, 950);
   background-image: url("/src/assets/img/webp/bg-1.webp");
   background-position: center center;
   background-size: cover;
@@ -49,12 +49,11 @@
   }
 
   &__title {
-    margin-bottom: 30px;
-    @include t.fluid-prop("margin-bottom", 15, 30, 320, 950);
+    @include t.fluid-prop("margin-bottom", 25, 50, 320, 950);
   }
 
   &__subtitle {
-    margin-bottom: 50px;
+    margin-bottom: 80px;
   }
 
   &__subtitle-text {
