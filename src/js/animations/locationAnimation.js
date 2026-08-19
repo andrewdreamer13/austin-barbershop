@@ -83,7 +83,7 @@ export function initLocationAnimation() {
  
   const mapWrapper = locationSection.querySelector(".location__map-wrapper");
   if (mapWrapper) {
-    gsap.set(mapWrapper, { opacity: 0, scale: 0.9 });
+    gsap.set(mapWrapper, { opacity: 0, scale: 0.95, y:20 });
 
     createObserver(
       mapWrapper,
@@ -91,6 +91,7 @@ export function initLocationAnimation() {
         gsap.to(mapWrapper, {
           opacity: 1,
           scale: 1,
+          y:0,
           duration: 1,
           ease: "power3.out",
         });
