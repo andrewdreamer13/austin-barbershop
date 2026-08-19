@@ -7,7 +7,7 @@ export const initFeaturesAnimation = () => {
   const createObserver = (callback, options = {}) => {
     const defaultOptions = {
       root: null,
-      rootMargin: "0px 0px -15% 0px", 
+      rootMargin: "0px 0px -15% 0px",
       threshold: 0.1,
       ...options,
     };
@@ -16,7 +16,7 @@ export const initFeaturesAnimation = () => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           callback(entry.target);
-          observer.unobserve(entry.target); 
+          observer.unobserve(entry.target);
         }
       });
     }, defaultOptions);
@@ -27,18 +27,22 @@ export const initFeaturesAnimation = () => {
   const overlayObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
-        gsap.to(featuresSection, {
-          "--overlay-opacity": entry.isIntersecting ? 0 : 1,
-          duration: 1.5,
-          ease: "power2.in",
-        });
+        if (entry.isIntersecting) {
+          gsap.to(featuresSection, {
+            "--overlay-opacity": 0,
+            duration: 1.5,
+            ease: "power2.in",
+          });
+
+          overlayObserver.unobserve(entry.target);
+        }
       });
     },
     { threshold: 0.2 },
   );
+
   overlayObserver.observe(featuresSection);
 
- 
   const contentObserver = createObserver((target) => {
     if (target.classList.contains("title__text")) {
       gsap.fromTo(
@@ -66,7 +70,6 @@ export const initFeaturesAnimation = () => {
     }
   });
 
- 
   const titleTexts = featuresSection.querySelectorAll(".title__text");
   titleTexts.forEach((text) => contentObserver.observe(text));
 
@@ -76,7 +79,6 @@ export const initFeaturesAnimation = () => {
   const description = featuresSection.querySelector(".features__description");
   if (description) contentObserver.observe(description);
 
-  
   const cardsObserver = createObserver((card) => {
     const iconBox = card.querySelector(".features__icon-box");
     const cardTitleTexts = card.querySelectorAll(".features__card-title-text");
@@ -101,4 +103,3 @@ export const initFeaturesAnimation = () => {
   const cards = featuresSection.querySelectorAll(".features__card");
   cards.forEach((card) => cardsObserver.observe(card));
 };
-
