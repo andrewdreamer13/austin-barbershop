@@ -85,5 +85,11 @@
         color: t.$colorAccent;
       }
     }
+
+    &:focus-visible {
+         background-color: t.$colorBg;
+        color: t.$colorAccent;
+        outline: none;
+    }
   }
 }

@@ -1,5 +1,5 @@
 
-
+//barber
 import { defineConfig } from "vite";
 import path from "path";
 import viteImagemin from "vite-plugin-imagemin";
