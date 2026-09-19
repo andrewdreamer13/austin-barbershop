@@ -22,36 +22,49 @@
     border: 0;
   }
 
-  .mapboxgl-ctrl-group {
-    overflow: hidden;
-    border: 1px solid t.$colorAccent;
-    background-color: t.$colorBg !important;
+  .mapboxgl-ctrl-attrib-inner,
+  .mapboxgl-ctrl-logo {
+    display: none;
+  }
 
-    button {
-      color: t.$colorAccent;
+ 
+}
 
-      & + button {
-        border-top-color: t.$colorAccent !important;
-      }
+.mapboxgl-ctrl-group {
+  overflow: hidden;
+  border: 1px solid t.$colorAccent;
+  background-color: t.$colorBg !important;
+  box-shadow: none !important;
+  button {
+    outline: none !important;
+    color: t.$colorAccent;
 
-      &:hover {
-        background-color: t.$colorModalBg !important;
-      }
+    & + button {
+      border-top-color: t.$colorAccent !important;
+    }
 
-      &:active,
-      &:focus {
-        background-color: t.$colorSuccess !important;
-      }
+    &:hover {
+      background-color: t.$colorModalBg !important;
+    }
 
-      .mapboxgl-ctrl-icon {
-        filter: invert(75%) sepia(85%) saturate(1200%) hue-rotate(355deg)
-          brightness(105%);
-        transition: filter 0.2s ease;
-      }
-      &:hover .mapboxgl-ctrl-icon {
-        filter: invert(85%) sepia(100%) saturate(2500%) hue-rotate(355deg)
-          brightness(115%);
-      }
+    &:active {
+      background-color: t.$colorSuccess !important;
+    }
+
+    &:focus-visible {
+      background-color: t.$colorSuccess !important;
+      box-shadow: inset 0 0 0 2px t.$colorAccent !important;
+    }
+
+    .mapboxgl-ctrl-icon {
+      filter: invert(75%) sepia(85%) saturate(1200%) hue-rotate(355deg)
+        brightness(105%);
+      transition: filter 0.2s ease;
+    }
+
+    &:hover .mapboxgl-ctrl-icon {
+      filter: invert(85%) sepia(100%) saturate(2500%) hue-rotate(355deg)
+        brightness(115%);
     }
   }
 }

@@ -3,10 +3,11 @@ import { openModal } from "../components/modalManager.js";
 
 const errorMessages = {
   empty: "This field is required",
-  shortName: "Must be at least 2 characters",
+  shortName: "Name must be at least 2 characters",
   invalidName: "Only letters and spaces allowed",
   invalidEmail: "Please enter a valid email address",
   invalidPhone: "Invalid phone number for selected country",
+  success: "Looks good!",
 };
 
 export function initFormHandler(formSelector) {
@@ -27,17 +28,67 @@ export function initFormHandler(formSelector) {
 
   if (forms.length === 0) {
     console.warn(
-      `[FormHandler Error]: Форма по селектору "${formSelector}" не найдена! Проверь ID в HTML и вызов в main.js.`,
+      `[FormHandler Error]: Form with selector "${formSelector}" not found! Check the HTML ID and the call in main.js.`,
     );
     return;
   }
 
   forms.forEach((form) => {
-    const inputs = form.querySelectorAll("input, textarea");
+    const inputs = form.querySelectorAll("input, textarea, button");
 
     initPhoneMask(form);
 
+    let isFormActive = false;
+
+    const setFormKeyboardActive = (active) => {
+      isFormActive = active;
+      if (active) {
+        inputs.forEach((el) => el.setAttribute("tabindex", "0"));
+        form.classList.add("_is-form-active");
+      } else {
+        inputs.forEach((el) => el.setAttribute("tabindex", "-1"));
+        form.classList.remove("_is-form-active");
+      }
+    };
+
+    form.setAttribute("tabindex", "0");
+    inputs.forEach((el) => el.setAttribute("tabindex", "-1"));
+
+    form.addEventListener("click", () => {
+      if (!isFormActive) setFormKeyboardActive(true);
+    });
+
+    form.addEventListener("keydown", (e) => {
+      if ((e.key === "Enter" || e.key === " ") && !isFormActive) {
+        e.preventDefault();
+        setFormKeyboardActive(true);
+
+        setTimeout(() => {
+          const firstInput = form.querySelector(
+            "input:not([type='hidden']):not([hidden]), textarea",
+          );
+          if (firstInput) {
+            firstInput.focus();
+          }
+        }, 0);
+      }
+
+      if (e.key === "Escape" && isFormActive) {
+        e.preventDefault();
+        setFormKeyboardActive(false);
+        form.focus();
+      }
+    });
+    form.addEventListener("focusout", (e) => {
+      if (e.relatedTarget && form.contains(e.relatedTarget)) {
+        return;
+      }
+      setFormKeyboardActive(false);
+    });
+
     inputs.forEach((input) => {
+      if (input.tagName === "BUTTON") return;
+
       input.addEventListener("blur", () => validateField(input));
 
       ["input", "change"].forEach((eventType) => {
@@ -58,6 +109,7 @@ export function initFormHandler(formSelector) {
 
       let isFormValid = true;
       inputs.forEach((input) => {
+        if (input.tagName === "BUTTON") return;
         if (!validateField(input)) {
           isFormValid = false;
         }
@@ -66,13 +118,10 @@ export function initFormHandler(formSelector) {
       if (isFormValid) {
         handleFormSubmit(form);
       } else {
-        const firstErrorBlock = form.querySelector("._is-invalid");
-        if (firstErrorBlock) {
-          const focusable = firstErrorBlock.querySelector(
-            "input:not([type='hidden']), textarea, button",
-          );
-          if (focusable) focusable.focus();
-        }
+        const firstError = form.querySelector(
+          "._is-invalid input, ._is-invalid textarea",
+        );
+        if (firstError) firstError.focus();
       }
     });
   });
@@ -183,10 +232,7 @@ function validateField(input) {
   if (input.hasAttribute("required") && value === "") {
     isValid = false;
     message = errorMessages.empty;
-  } else if (
-    (input.name === "name" || input.name === "lastName") &&
-    value !== ""
-  ) {
+  } else if (input.name === "name" && value !== "") {
     const nameRegex = /^[a-zA-Zа-яА-ЯёЁіІїЇєЄґҐ\s\-]+$/;
     if (value.length < 2) {
       isValid = false;
@@ -224,9 +270,10 @@ function validateField(input) {
     parent.classList.add("_is-invalid");
     parent.classList.remove("_is-valid");
   } else {
-    if (errorSpan) errorSpan.textContent = "";
+    if (errorSpan) errorSpan.textContent = errorMessages.success;
     parent.classList.remove("_is-invalid");
-    if (value !== "") {
+
+    if (value.length > 0) {
       parent.classList.add("_is-valid");
     } else {
       parent.classList.remove("_is-valid");
@@ -285,8 +332,8 @@ async function handleFormSubmit(form) {
     alert("Connection error. Please try again later.");
     console.error("[FormHandler Fetch Error]:", error);
   } finally {
-    if (submitBtn && btnTextEl) {
-      btnTextEl.textContent = originalText;
+    if (submitBtn) {
+      submitBtn.textContent = originalText;
       submitBtn.disabled = false;
     }
   }
