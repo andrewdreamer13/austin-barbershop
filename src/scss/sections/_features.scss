@@ -48,6 +48,7 @@
 
   &__title {
     margin-bottom: 40px;
+   
   }
 
   &__description {
@@ -55,10 +56,12 @@
     color: t.$colorWhite;
     font-weight: 400;
     @include t.fluid-prop("font-size", 18, 24, 320, 768);
-
+    transform: translateY(15px);
     line-height: 1.4;
     font-family: t.$font;
     text-align: center;
+    opacity: 0;
+    will-change: transform, opacity;
   }
 
   &__cards {
@@ -78,6 +81,12 @@
     @include t.flex-mix(center, center, column, 20px);
   }
 
+  .features__icon-box {
+    transform: translateY(15px) scale(0.9);
+    opacity: 0;
+    will-change: transform, opacity;
+  }
+
   &__card-title-text {
     display: block;
     color: t.$colorWhite;
@@ -86,5 +95,6 @@
     font-family: t.$font;
     text-align: center;
     @include t.fluid-prop("font-size", 20, 24, 320, 768);
+    will-change: transform, opacity;
   }
 }

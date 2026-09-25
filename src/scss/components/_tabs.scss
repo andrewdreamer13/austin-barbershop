@@ -28,7 +28,10 @@
 
   &__button {
     background-color: t.$colorAccent;
-    // transition: transform 0.3s ease;
+     opacity: 0;
+     will-change: transform, opacity;
+    transform: translateY(10px);
+   
 
     &::before {
       z-index: -1;
@@ -85,11 +88,9 @@
     margin-bottom: 30px;
     gap: 10px;
     width: 100%;
-    //  aspect-ratio: 2.06 / 1;
 
     @media (max-width: 768px) {
       grid-template-columns: repeat(2, 1fr);
-        // aspect-ratio: 0.9 / 1;
     }
   }
 
@@ -111,7 +112,6 @@
   &__more-button {
     margin: 0 auto;
     background-color: t.$colorAccent;
-    // transition: transform 0.3s ease;
 
     &::before {
       z-index: -1;

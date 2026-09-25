@@ -79,19 +79,15 @@ export function initGalleryAnimation() {
   const tabButtons = gallerySection.querySelectorAll(".tabs__button");
 
   if (tabsTrack && tabButtons.length) {
-    const tabsTl = gsap.fromTo(
-      tabButtons,
-      { opacity: 0, y: 10 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.6,
-        stagger: 0.2,
-        ease: "power2.out",
-        paused: true,
-      },
-    );
-
+    const tabsTl = gsap.to(tabButtons, {
+      opacity: 1,
+      y: 0,
+      duration: 0.6,
+      stagger: 0.3,
+      ease: "power2.out",
+      paused: true,
+      force3D: true, 
+    });
     createObserver(tabsTrack, () => tabsTl.play(), {
       rootMargin: "0px 0px -35% 0px",
     });

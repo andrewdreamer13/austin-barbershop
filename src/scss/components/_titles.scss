@@ -64,7 +64,7 @@
   padding-bottom: 20px;
   @include t.fluid-prop("padding-bottom", 12, 20, 320, 950);
   @include t.flex-mix(center, center, column, 0);
-
+  will-change: transform, opacity;
   --after-y: 20px;
   --after-opacity: 0;
 
@@ -84,6 +84,10 @@
     color: t.$colorWhite;
     font-weight: 600;
     @include t.fluid-prop("font-size", 22, 36, 320, 950);
+    opacity: 0;
+     will-change: transform, opacity;
+    transform: translateY(15px);
+
 
     line-height: 1;
     font-family: t.$font;
