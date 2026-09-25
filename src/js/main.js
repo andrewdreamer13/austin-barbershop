@@ -28,6 +28,8 @@ import { initGalleryAnimation } from "./animations/galleryAnimation.js";
 import { initLocationAnimation } from "./animations/locationAnimation.js";
 import { initContactsAnimation } from "./animations/contactsAnimation.js";
 import { initFooterAnimation } from "./animations/footerAnimation.js";
+import { initTextareaResize } from "./helpers/textareaAutoResize.js";
+
 
 document.addEventListener("DOMContentLoaded", () => {
   initPreloader();
@@ -54,4 +56,5 @@ document.addEventListener("DOMContentLoaded", () => {
   initLocationAnimation();
   initContactsAnimation();
   initFooterAnimation();
+  initTextareaResize();
 });

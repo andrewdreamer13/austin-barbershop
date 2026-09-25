@@ -10,7 +10,7 @@ export function initFooterAnimation() {
   const elementsToAnimate = [copyright, credits].filter(Boolean);
 
   if (elementsToAnimate.length) {
-    gsap.set(elementsToAnimate, { opacity: 0, y: 20 });
+    gsap.set(elementsToAnimate, { opacity: 0, y: 15 });
 
     const observer = new IntersectionObserver(
       (entries) => {

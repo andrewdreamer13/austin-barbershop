@@ -105,7 +105,7 @@
   &__list-price {
     padding: 4px 8px;
     border-radius: 4px;
-    background-color: t.$colorAccent;
+    background-color: t.$colorItemBg;
     @include t.flex-mix(center, center);
     color: t.$colorWhite;
     font-weight: 400;
@@ -129,7 +129,6 @@
   &__direction-button {
     min-width: 250px;
     background-color: t.$colorSuccess;
-    // transition: transform 0.3s ease;
 
     &::before {
       z-index: -1;
@@ -156,7 +155,6 @@
   &__book-button {
     min-width: 250px;
     background-color: t.$colorAccent;
-    // transition: transform 0.3s ease;
 
     &::before {
       z-index: -1;

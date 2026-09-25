@@ -40,7 +40,7 @@ export function initGalleryAnimation() {
     headerTl
       .fromTo(
         titleTexts,
-        { opacity: 0, y: 30 },
+        { opacity: 0, y: 15 },
         {
           opacity: 1,
           y: 0,
@@ -63,7 +63,7 @@ export function initGalleryAnimation() {
     if (description) {
       headerTl.fromTo(
         description,
-        { opacity: 0, y: 20 },
+        { opacity: 0, y: 15 },
         { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" },
         "-=0.2",
       );
@@ -81,7 +81,7 @@ export function initGalleryAnimation() {
   if (tabsTrack && tabButtons.length) {
     const tabsTl = gsap.fromTo(
       tabButtons,
-      { opacity: 0, y: 30 },
+      { opacity: 0, y: 10 },
       {
         opacity: 1,
         y: 0,
@@ -125,7 +125,7 @@ export function initGalleryAnimation() {
 
   
   if (activeBtn) {
-    gsap.set(activeBtn, { opacity: 0, y: 20 });
+    gsap.set(activeBtn, { opacity: 0, y: 15 });
 
     createObserver(
       activeBtn,

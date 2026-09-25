@@ -9,6 +9,35 @@
   }
 }
 
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px; 
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: t.$colorItemBg;
+  border-radius: 4px;
+
+ &:hover,
+  &:active {
+    background-color: t.$colorItemBg;
+  }
+}
+
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: t.$colorItemBg transparent;
+}
+
 html {
   overflow-x: hidden;
 }

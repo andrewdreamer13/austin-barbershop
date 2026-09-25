@@ -41,7 +41,7 @@ export function initLocationAnimation() {
     headerTl
       .fromTo(
         titleTexts,
-        { opacity: 0, y: 30 },
+        { opacity: 0, y: 15 },
         {
           autoAlpha: 1,
           y: 0,
@@ -64,7 +64,7 @@ export function initLocationAnimation() {
     if (description) {
       headerTl.fromTo(
         description,
-        { opacity: 0, y: 20 },
+        { opacity: 0, y: 15 },
         {
           opacity: 1,
           y: 0,
@@ -83,7 +83,7 @@ export function initLocationAnimation() {
  
   const mapWrapper = locationSection.querySelector(".location__map-wrapper");
   if (mapWrapper) {
-    gsap.set(mapWrapper, { opacity: 0, scale: 0.95, y:20 });
+    gsap.set(mapWrapper, { opacity: 0, scale: 0.97, y:15 });
 
     createObserver(
       mapWrapper,
