@@ -23,19 +23,19 @@
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: t.$colorItemBg;
+  background-color: t.$colorAccent;
   border-radius: 4px;
 
  &:hover,
   &:active {
-    background-color: t.$colorItemBg;
+    background-color: t.$colorAccent;
   }
 }
 
 
 * {
   scrollbar-width: thin;
-  scrollbar-color: t.$colorItemBg transparent;
+  scrollbar-color: t.$colorAccent transparent;
 }
 
 html {
@@ -49,6 +49,7 @@ body {
   font-size: 18px;
   font-family: t.$font;
   text-wrap: balance;
+  overflow-x: hidden;
 }
 
 

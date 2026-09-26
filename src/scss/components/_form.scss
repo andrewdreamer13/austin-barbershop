@@ -122,7 +122,29 @@
       font-family: t.$font;
     }
 
-   
+    &::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 4px;
+      background-color: rgba(t.$colorBlack, 0.6);
+
+      &:hover,
+      &:active {
+        background-color: rgba(t.$colorBlack, 0.6);
+      }
+    }
+
+    & {
+      scrollbar-color: rgba(t.$colorBlack, 0.6) transparent;
+      scrollbar-width: thin;
+    }
   }
 
   &__date-icon {
@@ -148,7 +170,8 @@
       transform: scaleX(0);
       transform-origin: center;
       border-radius: 6px;
-      background-color: t.$colorItemBg;
+      background-color:t.$colorSuccess;
+
       content: "";
       transition: transform 0.3s ease;
     }
@@ -156,7 +179,6 @@
       &:hover::before {
         transform: scaleX(1);
       }
-
     }
 
     &:active {

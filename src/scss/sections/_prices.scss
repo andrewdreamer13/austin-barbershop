@@ -105,7 +105,7 @@
   &__list-price {
     padding: 4px 8px;
     border-radius: 4px;
-    background-color: t.$colorItemBg;
+    background-color: t.$colorAccent;
     @include t.flex-mix(center, center);
     color: t.$colorWhite;
     font-weight: 400;
